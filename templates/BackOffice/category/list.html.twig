@@ -1,0 +1,84 @@
+{% extends 'BackOffice/base.html.twig' %}
+{% block title %}Admin - Category {% endblock %}
+{% block container %}
+    <div class="container-fluid">
+
+        <!--Start Dashboard Content-->
+
+        <div class="card mt-3">
+            <div class="card-content">
+                <div class="row row-group m-0">
+                    <div class="row">
+                        <div class="col-12 col-lg-12">
+                            <div class="card row row-group m-0">
+                                <div class="card-header"><span>Category List</span>
+
+
+                                    <table class="table align-items-center table-flush table-borderless table-responsive-md">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        {% for i in category %}
+                                            <tr>
+                                                <td scope="row">{{ i.id }}</td>
+                                                <td scope="row">{{ i.name }}</td>
+                                                <td scope="row">
+                                                    <a href="{{ path('edit_category',{'id':i.id} ) }}">
+                                                        <i class="ti-pencil"></i>
+                                                    </a>
+                                                    <a href="{{ path('delete_category',{'id':i.id}) }} "
+                                                       data-toggle="tooltip" data-placement="bottom"
+                                                       data-original-title="Supprimer">
+                                                        <i class="ti-close"></i>
+                                                    </a>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+
+
+                                </div>
+                            </div><!--End Row-->
+
+                            <!--End Dashboard Content-->
+
+                            <!--start overlay-->
+                            <div class="overlay toggle-menu"></div>
+                            <!--end overlay-->
+
+                        </div>
+                        <!-- End container-fluid-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End content-wrapper-->
+    <!--Start Back To Top Button-->
+    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+    <!--End Back To Top Button-->
+{% endblock %}

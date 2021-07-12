@@ -1,0 +1,44 @@
+{% extends 'BackOffice/base.html.twig' %}
+{% block title %}Admin - Category {% endblock %}
+{% block container %}
+
+    <div class="container-fluid">
+
+        <!--Start Dashboard Content-->
+
+        <div class="card mt-3">
+            <div class="card-content">
+                <div class="row row-group m-0">
+                    {{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+                    <div class="row">
+                        <div class="col-12 col-lg-12">
+                            <div class="card">
+                                <div class="card-header">Add Category
+                                    <div class="card-action">
+
+                                        {{ form_label(form.name,"Name:") }}
+                                        {{ form_widget(form.name, {attr: {class:'form-control','id':'name'}}) }}
+                                    </div>
+                                    <button  type="submit" href="{{ path('add_category') }}" class="btn btn-primary">Add Category</button>
+                                    {{ form_end(form) }}
+                                </div>
+                            </div><!--End Row-->
+
+                            <!--End Dashboard Content-->
+
+                            <!--start overlay-->
+                            <div class="overlay toggle-menu"></div>
+                            <!--end overlay-->
+
+                        </div>
+                        <!-- End container-fluid-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End content-wrapper-->
+    <!--Start Back To Top Button-->
+    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+    <!--End Back To Top Button-->
+{% endblock %}
