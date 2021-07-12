@@ -2,132 +2,108 @@
 
 namespace App\Entity;
 
+use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Product
- *
- * @ORM\Table(name="product")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass=ProductRepository::class)
  */
 class Product
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=25, nullable=false)
+     * @ORM\Column(type="string", length=255)
      */
     private $name;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="description", type="string", length=25, nullable=false)
-     */
-    private $description;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="idc", type="integer", nullable=false)
-     */
-    private $idc;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="price", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(type="float")
      */
     private $price;
 
     /**
-     * @return int
+     * @ORM\Column(type="string", length=255)
      */
-    public function getId(): int
+    private $image;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Category::class)
+     */
+    private $idcat;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $description;
+
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     */
-    public function setName(string $name): void
+    public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription(): string
-    {
-        return $this->description;
-    }
-
-    /**
-     * @param string $description
-     */
-    public function setDescription(string $description): void
-    {
-        $this->description = $description;
-    }
-
-    /**
-     * @return int
-     */
-    public function getIdc(): int
-    {
-        return $this->idc;
-    }
-
-    /**
-     * @param int $idc
-     */
-    public function setIdc(int $idc): void
-    {
-        $this->idc = $idc;
-    }
-
-    /**
-     * @return float
-     */
-    public function getPrice(): float
+    public function getPrice(): ?float
     {
         return $this->price;
     }
 
-    /**
-     * @param float $price
-     */
-    public function setPrice(float $price): void
+    public function setPrice(float $price): self
     {
         $this->price = $price;
+
+        return $this;
     }
 
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
 
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    public function getIdcat(): ?Category
+    {
+        return $this->idcat;
+    }
+
+    public function setIdcat(?Category $idcat): self
+    {
+        $this->idcat = $idcat;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
 }

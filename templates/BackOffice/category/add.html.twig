@@ -6,36 +6,36 @@
 
         <!--Start Dashboard Content-->
 
-        <div class="card mt-3">
-            <div class="card-content">
+        <!--<div class="card mt-3">-->
+           <!-- <div class="card-content">-->
                 <div class="row row-group m-0">
                     {{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
                     <div class="row">
-                        <div class="col-12 col-lg-12">
-                            <div class="card">
-                                <div class="card-header">Add Category
-                                    <div class="card-action">
+                        <div class="col">
+<br>
+                            <h5>Add Category</h5>
+                            <br>
+                                    <div class="col-12 col-lg-12">
 
                                         {{ form_label(form.name,"Name:") }}
                                         {{ form_widget(form.name, {attr: {class:'form-control','id':'name'}}) }}
+                                        <br>
+                                        <button  type="submit" href="{{ path('add_category') }}" class="btn btn-primary "  >Add Category</button>
+                                        {{ form_end(form) }}
                                     </div>
-                                    <button  type="submit" href="{{ path('add_category') }}" class="btn btn-primary">Add Category</button>
-                                    {{ form_end(form) }}
-                                </div>
-                            </div><!--End Row-->
 
-                            <!--End Dashboard Content-->
-
-                            <!--start overlay-->
-                            <div class="overlay toggle-menu"></div>
-                            <!--end overlay-->
 
                         </div>
-                        <!-- End container-fluid-->
+
+
+
                     </div>
+
                 </div>
-            </div>
-        </div>
+    </div>
+
+            <!--</div>-->
+      <!--  </div>-->
     </div>
     <!--End content-wrapper-->
     <!--Start Back To Top Button-->

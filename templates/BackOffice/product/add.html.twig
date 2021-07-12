@@ -1,0 +1,52 @@
+{% extends 'BackOffice/base.html.twig' %}
+{% block title %}Admin - Product {% endblock %}
+{% block container %}
+
+    <div class="container-fluid">
+
+        <!--Start Dashboard Content-->
+
+        <!--<div class="card mt-3">-->
+        <!-- <div class="card-content">-->
+        <div class="row row-group m-0">
+            {{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+            <div class="row">
+                <div class="col">
+                    <br>
+                    <h5>Add Product</h5>
+                    <br>
+                    <div class="col-12 col-lg-12">
+
+                        {{ form_label(form.idcat,"Category:") }}
+                        {{ form_widget(form.idcat, {attr: {class:'form-control','id':'idcat'}}) }}
+                        {{ form_label(form.name,"Name:") }}
+                        {{ form_widget(form.name, {attr: {class:'form-control','id':'name'}}) }}
+                        {{ form_label(form.price,"Price:") }}
+                        {{ form_widget(form.price, {attr: {class:'form-control','id':'price'}}) }}
+                        {{ form_label(form.image,"Image:") }}
+                        {{ form_widget(form.image, {attr: {class:'form-control','id':'image'}}) }}
+                        {{ form_label(form.description,"Description:") }}
+                        {{ form_widget(form.description, {attr: {class:'form-control','id':'description'}}) }}
+                        <br>
+                        <button  type="submit" href="{{ path('add_product') }}" class="btn btn-primary "  >Add Product</button>
+                        {{ form_end(form) }}
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <!--</div>-->
+    <!--  </div>-->
+    </div>
+    <!--End content-wrapper-->
+    <!--Start Back To Top Button-->
+    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+    <!--End Back To Top Button-->
+{% endblock %}

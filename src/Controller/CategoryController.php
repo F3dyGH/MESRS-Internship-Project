@@ -51,7 +51,7 @@ class CategoryController extends AbstractController
         $cat = $entityManager->getRepository(Category::class)->find($id);
         $entityManager->remove($cat);
         $entityManager->flush();
-        return $this->redirectToRoute('add_category');
+        return $this->redirectToRoute('list_category');
     }
     /**
      * @Route("admin/category/edit/{id}", name="edit_category")
