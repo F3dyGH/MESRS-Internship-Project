@@ -70,6 +70,7 @@ class ProductController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $entityManager = $this->getDoctrine()->getManager();
+           // move_uploaded_file($_FILES['image',''])
             $entityManager->flush();
 
             return $this->redirectToRoute('list_product');

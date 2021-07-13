@@ -23,8 +23,8 @@
                         {{ form_widget(form.name, {attr: {class:'form-control','id':'name'}}) }}
                         {{ form_label(form.price,"Price:") }}
                         {{ form_widget(form.price, {attr: {class:'form-control','id':'price'}}) }}
-                        {{ form_label(form.image,"Image:") }}
-                        {{ form_widget(form.image, {attr: {class:'form-control','id':'image'}}) }}
+                        {{ form_row(form.imageFile  ) }}
+
                         {{ form_label(form.description,"Description:") }}
                         {{ form_widget(form.description, {attr: {class:'form-control','id':'description'}}) }}
                         <br>

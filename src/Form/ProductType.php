@@ -5,9 +5,11 @@ namespace App\Form;
 use App\Entity\Product;
 use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ProductType extends AbstractType
 {
@@ -16,8 +18,8 @@ class ProductType extends AbstractType
         $builder
             ->add('name')
             ->add('price')
-            ->add('image')
             ->add('description')
+            ->add('image',HiddenType::class)
             ->add('idcat',EntityType::class, [
                 // looks for choices from this entity
                 'class' => Category::class,
@@ -25,6 +27,7 @@ class ProductType extends AbstractType
                 'choice_label' => 'name',
 
             ])
+            ->add('imageFile',VichImageType::class)
         ;
     }
 
