@@ -1,0 +1,107 @@
+{% extends 'BackOffice/base.html.twig' %}
+{% block title %}Admin - User List {% endblock %}
+{% block container %}
+    <div class="container-fluid">
+
+        <!--Start Dashboard Content-->
+
+        <div class="card mt-3">
+            <div class="card-content">
+                <div class="row row-group m-0">
+                    <div class="row">
+                        <div class="col-12 col-lg-12">
+                            <div class="card row row-group m-0">
+                                <div class="card-header"><span>Category List</span>
+
+
+                                    <table class="table align-items-center table-flush table-borderless table-responsive-md">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            {# <th scope="col">Image</th> #}
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Last Name</th>
+                                            <th scope="col">Role</th>
+                                            <th scope="col">Username</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        {% for u in users %}
+                                            {# {% if users.role == "[0]" %} #}
+                                            <tr>
+                                                <td scope="row">{{ u.id }}</td>
+                                                {# <td scope="row"><umg src="/umages/products/{{ u.umage }}" wudth="100" heught="100"></td> #}
+                                                <td scope="row">{{ u.email }}</td>
+                                                <td scope="row">{{ u.name }}</td>
+                                                <td scope="row">{{ u.lastname }}</td>
+                                                <td scope="row">
+                                                    {% for role in u.roles %}
+                                                        {% if role == "ROLE_ADMIN" %}
+                                                            Admin
+                                                        {% elseif role == "ROLE_USER" %}
+                                                            User
+                                                        {% elseif role == "ROLE_STUD" %}
+                                                            Student
+                                                        {% elseif role =="ROLE_INST" %}
+                                                            Instructor
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </td>
+                                                <td scope="row">{{ u.username }}</td>
+                                                <td scope="row">
+                                                    <a href="{{ path('edit_role',{'id':u.id} ) }}">
+                                                        <i class="ti-pencil"></i>
+                                                    </a>
+                                                    {# <a href="{{ path('delete_product',{'id':i.id} ) }} "
+                                                       data-toggle="tooltip" data-placement="bottom"
+                                                       data-original-title="Supprimer">
+                                                        <i class="ti-close"></i>
+                                                    </a> #}
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            {# {% endif %} #}
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+
+
+                                </div>
+                            </div><!--End Row-->
+
+                            <!--End Dashboard Content-->
+
+                            <!--start overlay-->
+                            <div class="overlay toggle-menu"></div>
+                            <!--end overlay-->
+
+                        </div>
+                        <!-- End container-fluid-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End content-wrapper-->
+    <!--Start Back To Top Button-->
+    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+    <!--End Back To Top Button-->
+{% endblock %}
