@@ -3,17 +3,6 @@
 {% block title %}Register{% endblock %}
 
 {% block content %}
-   {# <h1>Register</h1>
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}#}
     <section class="padding-y-100 bg-light">
         <div class="container">
             <div class="row">
@@ -66,30 +55,16 @@
                                         <span class="input-group-text bg-white ti-email"></span>
                                     </div>
                                     {{ form_widget(registrationForm.email,{attr: {class:'form-control border-left-0 pl-0','placeholder':'Email'}}) }}
-                                    {#                                    <input#}
-{#                                            type="email"#}
-{#                                            class="form-control border-left-0 pl-0"#}
-{#                                            placeholder="Email"#}
-{#                                    />#}
                                 </div>
                                 <div class="input-group input-group--focus mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-white ti-lock"></span>
                                     </div>
                                     {{ form_widget(registrationForm.plainPassword,{attr: {class:'form-control border-left-0 pl-0','placeholder':'Password'}}) }}
-                                    {#                                    <input#}
-{#                                            type="email"#}
-{#                                            class="form-control border-left-0 pl-0"#}
-{#                                            placeholder="Password"#}
-{#                                            required#}
-{#                                    />#}
                                 </div>
                                 <div class="my-4">
-{#                                    <label class="ec-checkbox check-sm my-2 clearfix">#}
-{#                                        <input type="checkbox" name="checkbox" />#}
-                                        {{ form_widget(registrationForm.agreeTerms,{attr: {class:'ec-checkbox check-sm my-2 clearfix'}}) }}
-{#                                        <span class="ec-checkbox__control mt-1"></span>#}
-                                        <span class="ec-checkbox__lebel">
+                                    {{ form_widget(registrationForm.agreeTerms,{attr: {class:'ec-checkbox check-sm my-2 clearfix'}}) }}
+                                    <span class="ec-checkbox__lebel">
 												By signing up, you agree to our
 												<a
                                                         href="page-terms-and-privacy-policy.html"
@@ -102,7 +77,6 @@
                                                         class="text-primary"
                                                 >Privacy Policy.</a>
 											</span>
-{#                                    </label>#}
                                 </div>
                                 <button class="btn btn-block btn-primary" type="submit">
                                     Register Now

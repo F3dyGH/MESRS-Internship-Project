@@ -1,0 +1,22 @@
+{% extends 'FrontOffice/base.html.twig' %}
+{% block title %}Success ! {% endblock %}
+{% block content %}
+<section class="padding-y-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2>
+                    <i class="fas fa-check-circle text-success mr-1"></i> Success
+                </h2>
+                <h4 class="my-4">Thank you for your registration!</h4>
+                <p>
+                    Your Email has been verified successfully.
+                </p>
+                <a href="{{ path('educati') }}" class="btn btn-primary mt-4">Back to home</a>
+            </div>
+        </div>
+        <!-- END row-->
+    </div>
+    <!-- END container-->
+</section>
+{% endblock %}
