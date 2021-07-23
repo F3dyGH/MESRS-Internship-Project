@@ -1,0 +1,49 @@
+.list-unstyled:not(.dropdown-menu .list-unstyled) {
+  > li {
+    margin-bottom: px-to-rem(5);
+  }
+}
+.list-style-icon{
+  > li {
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: px-to-rem(5);
+    &:before{
+      content: "\f00c";
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+      color: theme-color(primary);
+      font-size: 90%;
+    }
+  }
+}
+
+// list-icon-bullet
+.list-icon-bullet {
+  > li {
+    &:before{
+      content: "●";
+    }
+  }
+}
+
+// list-icon-check-circle
+.list-icon-check-circle {
+  > li {
+    &:before{
+      content: "\f058";
+    }
+  }
+}
+// list-icon-angle-right
+.list-icon-angle-right {
+  > li {
+    &:before{
+      content: "\f105";
+    }
+  }
+}

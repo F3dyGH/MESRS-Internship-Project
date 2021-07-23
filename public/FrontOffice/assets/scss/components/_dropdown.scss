@@ -1,0 +1,78 @@
+//  dropdown toggle icon
+.dropright .dropdown-toggle::after,
+.dropleft .dropdown-toggle::before,
+.dropup .dropdown-toggle::after,
+.dropdown-toggle::after{
+  content: "";
+  font-family: 'themify';
+  border: 0;
+  font-size: .70em;
+  display: inline;
+  vertical-align: 0;
+  margin-left: px-to-rem(5);
+}
+.dropup .dropdown-toggle::after{
+ content: "\e648";
+}
+.dropright .dropdown-toggle::after{
+ content: "\e649"
+}
+.dropleft .dropdown-toggle::before{
+ content: "\e64a"
+}
+
+
+// No caret
+.no-caret{
+  &:after {
+    content: none !important;
+  }
+}
+
+// Dropdown menu 
+.dropdown-menu {
+  box-shadow: 0 8px 20px rgba(55, 125, 255, 0.075);
+  border-radius: 0 0 px-to-rem(4) px-to-rem(4);
+  border: none;
+ .dropdown-item{
+    padding-top: px-to-rem(7);
+    padding-bottom: px-to-rem(7);
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+    &:hover {
+      background: #f8f8fa;
+    }
+    &:active,
+    &.active{
+      background:theme-color(primary);
+      color: #fff;
+    }
+  }
+}
+
+
+// Show dropdown on hover 
+[data-dropdown-event="hover"]{
+  > .dropdown-menu {
+      display: block;
+      top: -10000px;
+      -webkit-transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+      transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+      -o-transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+      transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+      transition: transform 0.2s ease-out, opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+      opacity: 0;
+      transform: translate3d(0, 10px, 0) scale(0.95);
+  }
+  &:hover{
+    > .dropdown-menu {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+      top: 100%;
+    }
+  }
+}

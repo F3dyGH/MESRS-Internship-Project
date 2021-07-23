@@ -1,0 +1,32 @@
+.height-100vh {
+  min-height: 100vh !important;
+}
+.height-90vh {
+  min-height: 90vh !important;
+}
+
+.height-80vh {
+  min-height: 80vh !important;
+}
+
+.height-70vh {
+  min-height: 70vh !important;
+}
+.height-60vh {
+  min-height: 60vh !important;
+}
+.height-50vh {
+  min-height: 50vh !important;
+}
+@for $i from 1 through 15 {
+    .height-#{$i}{
+        height: px-to-rem($i);
+    }
+}
+
+.height-auto {
+	height: auto !important;
+}
+.height-100p {
+  height: 100% !important;
+}

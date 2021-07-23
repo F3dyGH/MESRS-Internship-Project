@@ -1,0 +1,16 @@
+.left{
+  &-auto {
+    left: auto !important;
+  }
+  &-0 {
+    left: 0 !important;
+  }
+}
+
+@for $i from 5 through 50 {
+  @if($i%5 == 0){ 
+   .left-#{$i}{
+      left: px-to-rem($i) !important;
+   }
+  }
+}

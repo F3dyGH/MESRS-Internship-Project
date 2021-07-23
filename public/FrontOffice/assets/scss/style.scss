@@ -1,0 +1,31 @@
+//// Boostrap Extent and override bootstrap default variable
+@import "../vendor/bootstrap-4.6.0/scss/functions";
+@import "variables"; 
+@import "../vendor/bootstrap-4.6.0/scss/variables";
+@import "../vendor/bootstrap-4.6.0/scss/bootstrap"; 
+ 
+
+
+
+/// theme scss
+// Core  
+@import "functions";  
+@import "mixins";   
+@import "base";       
+
+// // components   
+@import "components/components";   
+
+// // Utilities class
+@import "utilities/utilities";   
+
+// // Theme color
+@import "colors";
+
+
+@import "customization";
+    
+
+  
+    
+     

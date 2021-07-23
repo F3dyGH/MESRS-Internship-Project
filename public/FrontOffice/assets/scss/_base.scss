@@ -1,0 +1,80 @@
+a {
+  color: inherit;
+  transition: .3s;
+}
+a:hover,
+a:active,
+a.active,
+a:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  transition: .3s;
+}
+
+input:not([type="submit"]):not([type="checkbox"]), 
+textarea,
+select{
+  transition: all .3s;
+  &:focus{
+    outline: none;
+  }
+}
+
+button,
+.btn{
+  &:focus{
+    outline: none; 
+    box-shadow:none;
+  }
+}
+
+
+.text-white {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6, 
+.h6,
+p,
+span {
+    color: #fff;
+  }
+}
+
+
+blockquote {
+  padding: 30px;
+  font-size: 1.23rem;
+  border-left: 4px solid theme-color(primary);
+  color: #202428;
+  font-weight: 500;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-style: italic;
+  > cite {
+    color: #9192a3;
+    font-size: 1.1rem;
+    display: block;
+    margin-top: 10px;
+  }
+}
+
+
+
+sup.sup{
+  top: -1.3em; 
+}
+
+
+

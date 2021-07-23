@@ -1,0 +1,150 @@
+.ec-radio {
+  $this:&;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flex;
+  display: -o-inline-flex;
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+  position: relative;
+  > input[type="radio"]{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: -1;
+    &:checked~ #{$this}__control {
+      border-color:map-get($theme-colors, primary);
+      &:after {
+        background: map-get($theme-colors, primary);
+      }
+    }
+  }
+  
+  // Basic control
+  &__control {
+    width: 22px;
+    height: 22px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #ddd;
+    margin-right: 10px;
+    border-radius: 50%;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      transition: background .3s;
+    }
+  }
+  
+// Style thin border
+  &.radio-thin {
+    #{$this}__control {
+      border-width: 1px;
+    }
+  }
+  
+   
+  &.radio{
+  // Radio Size    
+    &-xl {
+    font-size:1.1em;
+    #{$this}__control {
+      width: 32px;
+      height: 32px;
+      &:after {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+    &-lg {
+    font-size:1.05em;
+    #{$this}__control {
+      width: 28px;
+      height: 28px; 
+      &:after {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+  &-sm {
+    font-size:.95em;
+    #{$this}__control {
+      width: 20px;
+      height: 20px; 
+    }
+  }
+    &-xs {
+    font-size:.9em;
+    #{$this}__control {
+      width: 18px;
+      height: 18px; 
+      &:after {
+        width: 6px;
+        height: 6px;
+      }
+    }
+  }
+  
+  // Color variant
+    &-success {
+      > input[type="radio"]{
+        &:checked~ #{$this}__control {
+          border-color:map-get($theme-colors, success);
+          &:after {
+            background: map-get($theme-colors, success);
+          }
+        }
+      }
+    }    
+    &-info {
+      > input[type="radio"]{
+        &:checked~ #{$this}__control {
+          border-color:map-get($theme-colors, info);
+          &:after {
+            background: map-get($theme-colors, info);
+          }
+        }
+      }
+    }   
+    &-warning {
+      > input[type="radio"]{
+        &:checked~ #{$this}__control {
+          border-color:map-get($theme-colors, warning);
+          &:after {
+            background: map-get($theme-colors, warning);
+          }
+        }
+      }
+    } 
+    &-danger {
+      > input[type="radio"]{
+        &:checked~ #{$this}__control {
+          border-color:map-get($theme-colors, danger);
+          &:after {
+            background: map-get($theme-colors, danger);
+          }
+        }
+      }
+    }
+    
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+}

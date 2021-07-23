@@ -1,0 +1,135 @@
+
+
+//breadcrumb arrow control 
+.breadcrumb-double-angle {
+  .breadcrumb-item + .breadcrumb-item {
+    &::before {
+      content: "\e661";
+      font-family: 'themify';
+    }
+  }
+}
+
+.breadcrumb-single-angle {
+  .breadcrumb-item + .breadcrumb-item {
+    &::before {
+      content: "\e649";
+      font-family: 'themify';
+    }
+  }
+}
+
+
+// // triangle breadcrumb
+// .breadcrumb-triangle {
+  
+//   .breadcrumb-item+.breadcrumb-item::before {
+//     @media(min-width:768px){
+//       content: none;
+//     }
+//     content: "\e649";
+//     font-family: 'themify';
+//   }
+
+//   .breadcrumb-item {
+//     // triangle breadcrumb responsive
+//     @media(min-width:768px){
+//         position: relative;
+//         margin-right: 4px;
+//         text-align: center;
+//           &:after{
+//             content: '';
+//             position: absolute;
+//             width: 0;
+//             height: 0;
+//             border-width: 27px;
+//             top: 0;
+//             left: 100%;
+//             border-style: solid;
+//             border-color: transparent;
+//             border-left-color: #fff;
+//             z-index: 1;
+//             transform: translateX(4px)
+//           }
+    
+//           &:first-child{
+//             > a {
+//               padding-left: 30px;
+//               border-radius: 4px 0 0 4px;
+//             }
+//           }
+//           &:last-child{
+//             > a {
+//               border-radius: 0 4px 4px 0;
+//               &:after {
+//                 display: none;
+//               }
+//             }
+//           }
+//         &.current{
+//           > a {
+//             background: theme-color(primary);
+//             color: #fff;
+//             cursor: default;
+//             &:after {
+//               border-left-color:  theme-color(primary);
+//             }
+//           }
+//         }
+//       }
+      
+//     > a {
+//       display:inline-block;
+//       position: relative;
+//       padding: 10px 5px;
+//       // triangle breadcrumb responsive
+//       @media(min-width:768px){
+//         background: #f2f2f6;
+//         padding-left: 50px;
+//         padding-top: 5px;
+//         padding-bottom: 5px;
+//         padding-right: 15px;
+//         display: -webkit-flex;
+//         display: -moz-flex;
+//         display: -ms-flex;
+//         display: -o-flex;
+//         display: flex;
+//         height: 55px;
+//         align-items: center;
+//         justify-content: center;
+//         &:after {
+//           content: '';
+//           position: absolute;
+//           width: 0;
+//           height: 0;
+//           top: 0;
+//           left: 100%;
+//           border-width: 27px;
+//           border-style: solid;
+//           border-color: transparent;
+//           border-left-color: #f2f2f6;
+//           z-index: 2;
+//           transition: .3s;
+//         }
+//         &:hover{
+//           background: theme-color(primary);
+//           color: #fff;
+//           &:after {
+//             border-left-color:  theme-color(primary);
+//           }
+//         }
+//       }      
+//     }
+//   }
+  
+//   // expand state 
+//   &.breadcrumb-expand{
+//     @media(min-width:768px){
+//     .breadcrumb-item {
+//         flex: 1;
+//       }
+//     }
+//   }
+  
+  
+// }

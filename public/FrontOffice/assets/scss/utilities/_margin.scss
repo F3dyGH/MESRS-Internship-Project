@@ -1,0 +1,106 @@
+// Note: Space margin utility classes defined based on need. there are 3 things to note
+// 1. around margin available form 5-50 with space unit 5 like 5,10,15,20,25,30......50 
+// 2. Top, bottom, left, right margin available from 5-100 space unit 5 
+// 3. top and bottom margin not left and right extend from 100 to 200 and space unit 10 
+
+@for $i from 5 through 50 {
+  @if($i%5 == 0 ){
+    .margin-#{$i}{
+        margin: px-to-rem($i) !important;
+    }
+  }
+}
+@for $i from 5 through 100 {
+	@if($i%5 == 0 ){
+		.marginTop-#{$i},
+        .margin-y-#{$i}{
+			margin-top: px-to-rem($i) !important;
+		}
+      
+        .marginBottom-#{$i},
+        .margin-y-#{$i}{
+            margin-bottom: px-to-rem($i) !important;
+        }
+      
+		.marginLeft-#{$i},
+        .margin-x-#{$i}{
+			margin-left: px-to-rem($i) !important;
+		}
+
+		.marginRight-#{$i},
+        .margin-x-#{$i}{
+			margin-right: px-to-rem($i) !important;
+		}
+	}
+}
+
+
+//  Media 768 up 
+
+@media(min-width:768px){
+  
+    @for $i from 5 through 100 {
+        @if($i%5 == 0 ){
+            .marginTop-md-#{$i},
+            .margin-y-md-#{$i}{
+                margin-top: px-to-rem($i) !important;
+            }
+
+            .marginBottom-md-#{$i},
+            .margin-y-md-#{$i}{
+                margin-bottom: px-to-rem($i) !important;
+            }
+
+            .marginLeft-md-#{$i},
+            .margin-x-md-#{$i}{
+                margin-left: px-to-rem($i) !important;
+            }
+
+            .marginRight-md-#{$i},
+            .margin-x-md-#{$i}{
+                margin-right: px-to-rem($i) !important;
+            }
+        }
+    }
+
+
+}
+
+
+//  Media 768 up 
+
+@media(min-width:991px){
+
+    @for $i from 5 through 50 {
+      @if($i%5 == 0 ){
+        .margin-lg-#{$i}{
+            margin: px-to-rem($i) !important;
+        }
+      }
+    }
+    @for $i from 5 through 100 {
+        @if($i%5 == 0 ){
+            .marginTop-lg-#{$i},
+            .margin-y-lg-#{$i}{
+                margin-top: px-to-rem($i) !important;
+            }
+
+            .marginBottom-lg-#{$i},
+            .margin-y-lg-#{$i}{
+                margin-bottom: px-to-rem($i) !important;
+            }
+
+            .marginLeft-lg-#{$i},
+            .margin-x-lg-#{$i}{
+                margin-left: px-to-rem($i) !important;
+            }
+
+            .marginRight-lg-#{$i},
+            .margin-x-lg-#{$i}{
+                margin-right: px-to-rem($i) !important;
+            }
+        }
+    }
+
+
+}

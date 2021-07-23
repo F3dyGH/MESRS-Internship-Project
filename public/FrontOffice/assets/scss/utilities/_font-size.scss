@@ -1,0 +1,53 @@
+.font-primary {
+  font-family: $font-family-base !important;
+}
+.font-secondary {
+  font-family: $font-family-secondary !important;
+}
+
+@for $i from 10 through 60 {
+  @if($i%2 == 0){
+    .font-size-#{$i}{
+      font-size:px-to-rem($i) !important;
+    }
+  }
+}
+
+@media(min-width:768px){
+  @for $i from 10 through 60 {
+    @if($i%2 == 0){
+      .font-size-md-#{$i}{
+        font-size:px-to-rem($i) !important;
+      }
+    }
+  }
+}
+
+@media(min-width:992px){
+  @for $i from 10 through 60 {
+    @if($i%2 == 0){
+      .font-size-lg-#{$i}{
+        font-size:px-to-rem($i) !important;
+      }
+    }
+  }
+}
+
+@media(min-width:768px){
+  .display-md-1{ font-size:6rem !important;}
+  .display-md-2{ font-size:5.5rem !important;}
+  .display-md-3{ font-size:4.5rem !important;}
+  .display-md-4{ font-size:3.5rem !important;}
+}
+ 
+@media(min-width:992px){
+  .display-lg-1{ font-size:6rem !important;}
+  .display-lg-2{ font-size:5.5rem !important;}
+  .display-lg-3{ font-size:4.5rem !important;}
+  .display-lg-4{ font-size:3.5rem !important;}
+}
+
+.lead{
+  font-weight: 400;
+  line-height: 1.67 !important;
+}

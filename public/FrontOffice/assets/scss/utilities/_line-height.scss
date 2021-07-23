@@ -1,0 +1,20 @@
+.line-height{
+  &-reset{
+    line-height: normal !important;
+  }
+  &-xs{
+    line-height: 1.2;
+  }
+  &-sm{
+    line-height: 1.47;
+  }
+  &-lg{
+    line-height: 2;
+  }
+  &-xl{
+    line-height:2.2;
+  }
+}
+
+
+

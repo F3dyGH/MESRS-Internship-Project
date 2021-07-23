@@ -1,0 +1,22 @@
+// Image background utility 
+.bg{
+  &-cover {
+    background-size: cover !important;
+  }
+  &-center{
+    background-position: center center !important;
+  }
+  &-absolute{
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0 !important;
+    top: 0 !important;
+    z-index: -1 !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    object-fit:cover !important;
+    object-position: 0 0 !important;
+  }
+  
+}

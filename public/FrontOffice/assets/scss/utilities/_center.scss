@@ -1,0 +1,17 @@
+// Absolute center 
+.absolute{
+    &-center{
+        @include center(absolute);
+    }
+    &-center-x {
+        @include center(absolute, true, false);
+    }
+    &-center-y {
+      @include center(absolute, false, true);
+    }
+}
+
+// Relative center 
+.flex-center{
+    @include flex-center();
+}

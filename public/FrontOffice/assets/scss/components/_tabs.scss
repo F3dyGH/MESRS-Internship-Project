@@ -1,0 +1,63 @@
+.tab-line {
+  .nav-item {
+    margin-bottom: -1px;
+  }
+  .nav-link {
+    border-bottom: 1px solid transparent;
+    &.active {
+      border-bottom-color:theme-color(primary);
+    }
+  }
+  
+  // 2x line 
+  
+  &--2x {
+      .nav-link {
+        border-bottom-width: 2px
+    }
+}  
+  
+  // 3x line 
+  
+  &--3x {
+      .nav-link {
+        border-bottom-width: 3px
+    }
+}
+}
+
+.tab-state-primary {
+  .nav-link.active {
+    background: theme-color(primary) !important;
+    border-color:  theme-color(primary) !important;
+    color: #fff !important;
+  }
+}
+
+// tabs-portlet
+
+.tabs-portlet {
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flex;
+  display: -o-inline-flex;
+  display: inline-flex;
+  .nav-link {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 3px solid transparent;
+    border-bottom: 1px solid #e4e4e7;
+    border-right:  1px solid #e4e4e7;
+    &.active {
+      border-top-color: theme-color(primary);
+      border-bottom-color: transparent;
+    }
+  }
+}
+
+
+
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background: theme-color(primary);
+}

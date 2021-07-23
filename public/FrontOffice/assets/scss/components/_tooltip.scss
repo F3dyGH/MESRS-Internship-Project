@@ -1,0 +1,45 @@
+.tooltip{
+  $this:&;
+  &.show{
+    opacity: 1;
+  }
+  &-inner { 
+    background: map-get($theme-colors, dark); 
+    padding: px-to-rem(7) px-to-rem(11);
+  }
+  
+  &-light {
+    #{$this}-inner { 
+      background: #fff; 
+      color: inherit;
+      box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+    }
+  &.bs-tooltip{
+    
+    &-right {
+      .arrow:before {
+        border-right-color: #fff; 
+      }
+    }
+    
+    &-left {
+      .arrow:before {
+        border-left-color: #fff; 
+      }
+    }
+    
+    &-top {
+      .arrow:before {
+        border-top-color: #fff; 
+      }
+    }   
+    
+    &-bottom {
+      .arrow:before {
+        border-bottom-color: #fff; 
+      }
+    }
+    
+  }
+  }
+}

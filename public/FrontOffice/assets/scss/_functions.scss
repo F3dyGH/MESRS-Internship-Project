@@ -1,0 +1,18 @@
+@function get-social-color($key) {
+  @if map-has-key($social-colors, $key) {
+   @return map-get($social-colors, $key);
+  }
+  @warn "Unknown `#{$key}` in $social-colors.";
+  @return null; 
+}
+
+// Convert px value to rem
+@function px-to-rem($size) {
+  $remSize: $size / 16;
+  @return $remSize * 1rem;
+}
+// Convert px value to rem
+@function px-to-em($size) {
+  $emSize: $size / 16;
+  @return $emSize * 1em;
+}

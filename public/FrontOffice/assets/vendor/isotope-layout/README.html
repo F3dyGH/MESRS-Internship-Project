@@ -1,0 +1,65 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>README.md</title>
+      </head>
+      <body>
+        <h1 id="isotope">Isotope</h1>
+<p><em>Filter &amp; sort magical layouts</em></p>
+<p>See <a href="https://isotope.metafizzy.co">isotope.metafizzy.co</a> for complete docs and demos.</p>
+<h2 id="install">Install</h2>
+<h3 id="download">Download</h3>
+<ul>
+<li><a href="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js">isotope.pkgd.js</a> un-minified, or</li>
+<li><a href="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js">isotope.pkgd.min.js</a> minified</li>
+</ul>
+<h3 id="cdn">CDN</h3>
+<p>Link directly to Isotope files on <a href="https://unpkg.com">unpkg</a>.</p>
+<pre><code class="lang-html">&lt;script src=&quot;https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- or --&gt;
+&lt;script src=&quot;https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h3 id="package-managers">Package managers</h3>
+<p>npm: <code>npm install isotope-layout --save</code></p>
+<p>Bower: <code>bower install isotope-layout --save</code></p>
+<h2 id="license">License</h2>
+<h3 id="commercial-license">Commercial license</h3>
+<p>If you want to use Isotope to develop commercial sites, themes, projects, and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary. Purchase an Isotope Commercial License at <a href="https://isotope.metafizzy.co/#commercial-license">isotope.metafizzy.co</a></p>
+<h3 id="open-source-license">Open source license</h3>
+<p>If you are creating an open source application under a license compatible with the <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL license v3</a>, you may use Isotope under the terms of the GPLv3.</p>
+<p><a href="https://isotope.metafizzy.co/license.html">Read more about Isotope&#39;s license</a>.</p>
+<h2 id="initialize">Initialize</h2>
+<p>With jQuery</p>
+<pre><code class="lang-js">$(&#39;.grid&#39;).isotope({
+  // options...
+  itemSelector: &#39;.grid-item&#39;,
+  masonry: {
+    columnWidth: 200
+  }
+});
+</code></pre>
+<p>With vanilla JavaScript</p>
+<pre><code class="lang-js">// vanilla JS
+var grid = document.querySelector(&#39;.grid&#39;);
+var iso = new Isotope( grid, {
+  // options...
+  itemSelector: &#39;.grid-item&#39;,
+  masonry: {
+    columnWidth: 200
+  }
+});
+</code></pre>
+<p>With HTML</p>
+<p>Add a <code>data-isotope</code> attribute to your element. Options can be set in JSON in the value.</p>
+<pre><code class="lang-html">&lt;div class=&quot;grid&quot;
+  data-isotope=&#39;{ &quot;itemSelector&quot;: &quot;.grid-item&quot;, &quot;masonry&quot;: { &quot;columnWidth&quot;: 200 } }&#39;&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;&lt;/div&gt;
+  ...
+&lt;/div&gt;
+</code></pre>
+<hr>
+<p>By <a href="https://metafizzy.co">Metafizzy</a>, 2010–2017</p>
+
+      </body>
+    </html>

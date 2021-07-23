@@ -1,0 +1,19 @@
+.animated-share {
+  $this:&;
+  position: relative;
+  &__media {
+    min-width: 100%;
+    position: absolute;
+    top: 15px;
+    right: 45px;
+    opacity: 0;
+    transition: .5s;
+  }
+  &.active {
+    #{$this}__media {
+      opacity: 1;
+      visibility: visible;
+      top: 0;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.pagination{
+  // .page-link {
+  //   color: inherit;
+  // }
+  
+  
+  // Pill 
+  &-pill {
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flex;
+    display: -o-inline-flex;
+    display: inline-flex;
+    border: 1px solid $border-color;
+    .page-link {
+      border: none;
+    }
+  }
+}

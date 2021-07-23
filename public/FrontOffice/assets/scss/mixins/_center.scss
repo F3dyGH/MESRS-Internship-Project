@@ -1,0 +1,30 @@
+@mixin center($position:relative, $horizontal: true, $vertical: true) {
+  position: $position;
+  @if ($horizontal and $vertical) {
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  } @else if ($horizontal) {
+    left: 50% !important;
+    transform: translate(-50%, 0) !important;
+  } @else if ($vertical) {
+    top: 50% !important;
+    transform: translate(0, -50%) !important;
+  }
+}
+
+@mixin flex-center() {
+ display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+          justify-content: center;
+}

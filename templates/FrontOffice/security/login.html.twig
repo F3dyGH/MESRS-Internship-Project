@@ -1,0 +1,128 @@
+{% extends 'FrontOffice/base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+{% block mainpage %}Test{% endblock %}
+
+{% block content %}
+{#<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="inputEmail">Email</label>
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+    <label for="inputPassword">Password</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+    >
+
+    #}{#
+        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+        See https://symfony.com/doc/current/security/remember_me.html
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="_remember_me"> Remember me
+            </label>
+        </div>
+    #}{#
+
+    <button class="btn btn-lg btn-primary" type="submit">
+        Sign in
+    </button>
+</form>#}
+    <section class="padding-y-100 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <div class="card shadow-v2">
+                        <div class="card-header border-bottom">
+                            <h4 class="mt-4">Log In to Your Educati Account!</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col my-2">
+                                    <button class="btn btn-block btn-facebook">
+                                        <i class="ti-facebook mr-1"></i>
+                                        <span>Facebook Sign in</span>
+                                    </button>
+                                </div>
+                                <div class="col my-2">
+                                    <button class="btn btn-block btn-google-plus">
+                                        <i class="ti-google mr-1"></i>
+                                        <span>Google Sign in</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="text-center my-4">OR</p>
+                            <form action="#" method="POST" class="px-lg-4">
+                                <div class="input-group input-group--focus mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-white ti-email"></span>
+                                    </div>
+                                    <input
+                                            type="text"
+                                            id="inputEmail"
+                                            name="email"
+                                            class="form-control border-left-0 pl-0"
+                                            placeholder="Email"
+                                            autocomplete="email"
+                                            required
+                                            autofocus
+                                            placeholder="Enter Email"
+                                            value="{{ last_username }}"
+                                    />
+                                </div>
+                                <div class="input-group input-group--focus mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-white ti-lock"></span>
+                                    </div>
+                                    <input
+                                            type="password"
+                                            class="form-control border-left-0 pl-0"
+                                            placeholder="Password"
+                                            name="password"
+                                            id="inputPassword"
+                                            autocomplete="current-password"
+                                            required
+                                    />
+                                    <input type="hidden" name="_csrf_token"
+                                           value="{{ csrf_token('authenticate') }}">
+                                </div>
+
+                                <div class="d-md-flex justify-content-between my-4">
+                                    <label class="ec-checkbox check-sm my-2 clearfix">
+                                        <input type="checkbox" name="checkbox" />
+                                        <span class="ec-checkbox__control"></span>
+                                        <span class="ec-checkbox__lebel">Remember Me</span>
+                                    </label>
+                                    <a
+                                            href="page-recover-password.html"
+                                            class="text-primary my-2 d-block"
+                                    >Forgot password?</a
+                                    >
+                                </div>
+                                <button class="btn btn-block btn-primary" type="submit">Log In</button>
+                                <p class="my-5 text-center">
+                                    Don’t have an account?
+                                    <a href="{{ path('app_register') }}" class="text-primary">Register</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END row-->
+        </div>
+        <!-- END container-->
+    </section>
+{% endblock %}

@@ -1,0 +1,30 @@
+.card {
+  &-header {
+    background: #fff;
+    border-bottom-color: transparent;
+    padding: 15px 30px;
+  }
+  &-body {
+    padding: px-to-rem(30);
+    position: relative;
+  }
+  &-footer {
+    background-color: transparent;
+    padding: px-to-rem(30); 
+  }
+  &-img-overlay{
+    padding: px-to-rem(20);
+  }
+}
+
+.list-card {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  border-radius: px-to-rem(4); 
+  overflow: hidden;
+  flex-wrap: wrap;
+  background: #fff;
+}

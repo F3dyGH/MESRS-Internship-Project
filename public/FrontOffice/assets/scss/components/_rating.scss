@@ -1,0 +1,16 @@
+.ec-rating, .ec-review-rating{
+  color: rgba(24,28,33,0.15) ;
+  margin-bottom: 0;
+  > li {
+    display: inline-block;
+    &.active {
+      color: #ffc003;
+    }
+  }
+}
+
+.ec-rating{
+  > li {
+    cursor: pointer;
+  }
+}

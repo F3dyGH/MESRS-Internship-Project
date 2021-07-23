@@ -1,0 +1,28 @@
+.bottom{
+	&-0 { bottom: 0 !important; }
+}
+
+@for $i from 5 through 50 {
+	@if($i%5 == 0){ 
+	 .bottom-#{$i}{
+	 	bottom: px-to-rem($i) !important;
+	 }
+	}
+}
+
+
+.bottom-25p{
+	bottom: 25% !important;
+}
+
+.bottom-50p{
+	bottom: 50% !important;
+}
+
+.bottom-75p{
+	bottom: 75% !important;
+}
+
+.bottom-100p{
+	bottom: 100% !important;
+}

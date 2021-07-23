@@ -1,0 +1,464 @@
+.navbar-brand {
+  img{
+    @media(max-width:576px){
+      max-width: 120px;
+    }
+  }
+}
+
+
+
+// nav-link color control
+.ec-nav {
+  .nav-link {
+    color: #202428;
+  }
+}
+
+
+// nav full width when mobile 
+.ec-nav {
+  .container {
+    position: relative;
+  }
+  .navbar {
+    position: static;
+  }
+}
+
+
+// Nav item spacing
+.ec-nav .nav-item{
+  @media(min-width:992px){
+    margin-left: 10px;
+  }
+}
+
+// Nav link padding control
+.navbar-expand{
+  &-xl, &-lg, &-md{
+    .ec-nav__navbar .nav-link {
+      @media(min-width:992px){
+        padding-top: px-to-rem(30);
+        padding-bottom: px-to-rem(30);
+      }
+    }
+    .nav-link__list {
+      display: block;
+      padding-top: px-to-rem(5);
+      padding-bottom:  px-to-rem(5);
+      padding-left:  px-to-rem(25);
+      padding-right: px-to-rem(25);
+    }
+  }
+}
+
+////// Dropdown control 
+
+.nav-item__has-dropdown {
+  position: relative;
+  .dropdown-menu{
+    border-top: 3px solid theme-color(primary);
+  }
+}
+.nav-item__has-megamenu {
+  position: static;
+    .dropdown-menu{
+    border-top: 3px solid theme-color(primary);
+  }
+}
+
+// dropdown menu appearance 
+.dropdown-menu__inner {
+  padding: px-to-rem(5) px-to-rem(30);
+}
+
+// Nested dropdown-menu
+.dropdown-menu {
+  .dropdown-menu {
+    left: 100%;
+    top: -1000px;
+    transform: translate3d(0, 10px, 0) scale(.98);
+  }
+}
+
+// Show Nested dropdown-menu
+.dropdown-menu .nav-item__has-dropdown:hover{
+  > .dropdown-menu {
+    top: 0 !important;
+  }
+}
+
+// .dropdown-menu position based on viewport
+.navbar-expand{
+  &-xl, &-lg, &-md {
+    .dropdown-menu {
+      @media(min-width:992px){
+        display: block;
+        top: -10000px;
+        transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+        opacity: 0;
+        transform: translate3d(0, 10px, 0) scale(.98);
+        margin-top: 0;
+        min-width: 220px;
+      }
+    }
+  }
+}
+
+
+// Show the dropdown-menu on hover
+.nav-item__has-dropdown, .nav-item__has-megamenu {
+  &:hover{
+    color: theme-color(primary);
+    > .dropdown-menu {
+      opacity: 1;
+      top: 100%;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+  }
+}
+
+
+// Mega menu control 
+.nav-item__has-megamenu {
+  .dropdown-menu {
+    width: 100%;
+    left: 0;
+  }
+}
+
+// Mega menu width control 
+.megamenu-col{
+  @media(min-width:992px){
+    &-1 {
+      .dropdown-menu {
+         width: 25%;
+      }
+    }
+    &-2 {
+      .dropdown-menu {
+         width: 50%;
+      }
+    }
+    &-3 {
+      .dropdown-menu {
+         width: 75%;
+      }
+    }
+  }
+}
+
+
+/// dropdown arrow control 
+.nav-link__list{
+  &.dropdown-toggle{
+    &:after {
+      position: absolute;
+      right: 30px;
+      @media(min-width:992px){
+        content: "\e649";
+      }
+    }
+  }
+}
+
+
+
+
+/////// Nav toolbar 
+.nav-toolbar{
+   .navbar-nav {
+    flex-direction: row;
+     .nav-link{
+       padding-left: .5rem;
+       padding-right: .5rem;
+       padding-top: px-to-rem(30);
+       padding-bottom: px-to-rem(30);
+     }
+  }
+  .dropdown-menu {
+    position: absolute;
+  }
+}
+
+// Search form
+
+.ect-search-form{
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  margin-top: 20px;
+  transition: .3s;
+  z-index: 1030;
+  border-radius: 0 0 4px 4px;
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0;
+  }
+  .btn {
+    background: theme-color(primary);
+    border: 1px solid theme-color(primary) !important; 
+    border-radius: 0;
+    color: #fff;
+    padding-left: 15px;
+    padding-right: 15px;
+  } 
+}
+  .ect-search-form__field {
+    padding: 12px;
+    border: 1px solid theme-color(primary) !important; 
+  }
+ 
+
+
+
+// 
+.dropdown-cart{
+  left: auto;
+  right: -20px;
+  width: 350px;
+  z-index: 1300;
+  &__item {
+    padding: 15px 25px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(#000, .10);
+    &-remove {
+      font-size: 75%;
+      opacity: .7;
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }
+  &__img {
+    max-width: 50px;
+  }
+}
+
+
+
+
+
+
+
+
+/// only responsive rules when menu collapsed
+.navbar-toggler  {
+  padding: 0;
+  margin-right: 10px;
+}
+.when-collapsed {
+  @media(max-width:992px){
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    z-index: 1150;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.hamburger {
+  padding: 10px;
+  background: theme-color(primary);
+  width: 45px;
+  height: 40px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-transition-property: opacity, -webkit-filter;
+  transition-property: opacity, -webkit-filter;
+  -o-transition-property: opacity, filter;
+  transition-property: opacity, filter;
+  transition-property: opacity, filter, -webkit-filter;
+  -webkit-transition-duration: 0.15s;
+  -o-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  border: 0;
+  margin: 0;
+  overflow: visible; }
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative; }
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -1px; }
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 26px;
+  height: 1px;
+  background-color: #fff;
+  border-radius: 4px;
+  position: absolute;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.15s;
+  -o-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease; }
+
+.is-scrolling .hamburger-inner, .is-scrolling .hamburger-inner::before, .is-scrolling .hamburger-inner::after {
+  background-color: #54667a; }
+
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block; }
+
+.hamburger-inner::before {
+  top: -8px; }
+
+.hamburger-inner::after {
+  bottom: -8px; }
+
+.hamburger--spin .hamburger-inner {
+  -webkit-transition-duration: 0.22s;
+  -o-transition-duration: 0.22s;
+  transition-duration: 0.22s;
+  -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -o-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--spin .hamburger-inner::before {
+  -webkit-transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+  -o-transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+  transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
+
+.hamburger--spin .hamburger-inner::after {
+  -webkit-transition: bottom 0.1s 0.25s ease-in, -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in, -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -o-transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--spin.is-active .hamburger-inner {
+  -webkit-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  transform: rotate(225deg);
+  -webkit-transition-delay: 0.12s;
+  -o-transition-delay: 0.12s;
+  transition-delay: 0.12s;
+  -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+.hamburger--spin.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+  -webkit-transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+  -o-transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+  transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
+
+.hamburger--spin.is-active .hamburger-inner::after {
+  bottom: 0;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-transition: bottom 0.1s ease-out, -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+.hamburger--spin-r .hamburger-inner {
+  -webkit-transition-duration: 0.22s;
+  -o-transition-duration: 0.22s;
+  transition-duration: 0.22s;
+  -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -o-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--spin-r .hamburger-inner::before {
+  -webkit-transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+  -o-transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+  transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
+
+.hamburger--spin-r .hamburger-inner::after {
+  -webkit-transition: bottom 0.1s 0.25s ease-in, -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in, -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -o-transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--spin-r.is-active .hamburger-inner {
+  -webkit-transform: rotate(-225deg);
+  -ms-transform: rotate(-225deg);
+  transform: rotate(-225deg);
+  -webkit-transition-delay: 0.12s;
+  -o-transition-delay: 0.12s;
+  transition-delay: 0.12s;
+  -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+.hamburger--spin-r.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+  -webkit-transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+  -o-transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+  transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
+
+.hamburger--spin-r.is-active .hamburger-inner::after {
+  bottom: 0;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transition: bottom 0.1s ease-out, -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,183 @@
+// Default btn mixin 
+
+//  btn outline mixin 
+
+
+@mixin btn-opacity($color, $hoverTextColor:false){
+  background: rgba($color, .15);
+  color: $color;
+  &:hover{
+    background: $color;
+    @if $hoverTextColor{
+      color: $hoverTextColor;
+    }@else {
+      color: #fff ;
+    }
+  }
+}
+
+/// Button Primary 
+.btn-opacity-primary{
+  @include btn-opacity(theme-color(primary));
+}
+
+/// Button Secondary 
+
+.btn-opacity-secondary{
+  @include btn-opacity(#606065);
+}
+
+
+
+/// Button  Success 
+.btn-opacity-success{
+  @include btn-opacity(theme-color(success));
+}
+
+/// Button  Info 
+.btn-opacity-info{
+  @include btn-opacity(theme-color(info));
+}
+
+/// Button  Warning 
+.btn-opacity-warning{
+  @include btn-opacity(theme-color(warning));
+}
+
+
+/// Button  Danger 
+.btn-opacity-danger{
+  @include btn-opacity(theme-color(danger));
+}
+
+
+
+
+
+/// Button White 
+.btn-white {
+  background: #fff;
+  color: $body-color;
+} 
+
+.btn-outline-white {
+ background-color: transparent; 
+  border-color: #fff;
+  color: #fff;
+  &:hover{
+    background: #fff;
+    color: #000;
+  }
+}
+.btn-outline-white-hover{
+  background: #fff;
+  border-color: #fff;
+  color: #000;
+  &:hover{
+    background-color: transparent;
+    color: #fff;
+  }
+}
+
+
+
+// Link Button
+.btn-link {
+  color: theme-color(primary);
+  &:hover {
+    color: darken(theme-color(primary), 10%) !important ;
+  }
+}
+
+
+
+
+/// Group Buttons
+
+.btn-group {
+  .btn-light {
+    background:transparent;
+    border-color: #e4e4e7;
+    &:hover,
+    &:active,
+    &:focus{
+      background: #e4e4e7;
+    }
+  }
+  
+  &-pill {
+    .btn:first-child {
+      border-radius: 3rem 0 0 3rem;
+    }
+    .btn:last-child {
+      border-radius: 0 3rem 3rem 0;
+    }
+    .btn-group {
+      .btn {
+        border-radius: 0 10rem 10rem 0;
+      }
+    }
+  }
+  
+  &-square {
+    .btn {
+      border-radius: 0;
+    }
+  }
+}
+
+
+// Pill Buttons 
+.btn-pill {
+  border-radius: 30px;
+}
+
+// Buttons with icon 
+
+.btn-icon {
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flex;
+  display: -o-inline-flex;
+  display: inline-flex;
+  align-items: center;
+}
+
+// Social Buttons 
+@each $name, $color in $social-colors { 
+ .btn-#{$name}{ 
+   color: #fff !important;
+    background-color: $color;
+     &:hover{
+       background-color: darken($color, 10%);
+     }   
+  }  
+  .btn-outline-#{$name} {
+    background-color: transparent;
+    border-color: $color;
+    color: $color;
+    &:hover {
+      background: $color;
+      border-color: $color;
+      color: #fff;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

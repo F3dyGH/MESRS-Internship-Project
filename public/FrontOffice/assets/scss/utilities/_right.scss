@@ -1,0 +1,13 @@
+.right{
+  &-0 {
+    right: 0 !important;
+  }
+}
+
+@for $i from 5 through 50 {
+  @if($i%5 == 0){ 
+   .right-#{$i}{
+      right: px-to-rem($i) !important;
+   }
+  }
+}

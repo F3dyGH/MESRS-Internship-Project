@@ -1,0 +1,14 @@
+// Properly sort all of your z-index
+$z-index: (
+  modal              : 200,
+  navigation         : 100,
+  footer             : 90,
+  triangle           : 60,
+  navigation-rainbow : 50,
+  share-type         : 41,
+  share              : 40,
+); 
+
+//.navigation {
+// z-index: map-get($z-index, navigation);
+//}

@@ -1,0 +1,22 @@
+.badge-blurb {
+  position: relative;
+  display: inline-block;
+  .badge {
+    position: absolute;
+    width: px-to-rem(22);
+    height: px-to-rem(22);
+    font-weight: normal;
+    top: -10px;
+    right: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+  }
+  &.badge-blurb-rounded{
+    .badge {
+      top: -4px;
+      right: -6px;
+    }
+  }
+}

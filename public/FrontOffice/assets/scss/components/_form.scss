@@ -1,0 +1,100 @@
+.input-group-focus-state {
+  transition: .3s;
+}
+
+.input-state-shadow {
+  &.input-state{
+  -webkit-box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+.form-control {
+  &:focus{
+    box-shadow: none;
+  }
+
+}
+
+
+
+
+// Input solid 
+.input--solid {
+  background: $input-solid-bg;
+  border-color: $input-solid-bg;
+}
+
+
+// Input Air 
+.input--air {
+    box-shadow: 0px 3px 25px 0px rgba(0, 0, 0, 0.10);
+}
+
+
+
+// Pill input 
+.input--pill{
+  border-radius: 10em;
+}
+
+
+
+
+
+
+// Select
+select.form-control {
+  &:focus{
+    box-shadow: none;
+  }
+}
+
+
+// Textarea 
+
+textarea.rounded-pill{
+  border-radius: 1em !important;
+}
+
+
+
+
+
+// form input group
+.input-group-text {
+  background: #f7f7f8;
+  transition: .3s;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #9192a3;
+  border-color: $input-border-color;
+}
+
+
+// input-group--focus 
+
+.input-group--focus{
+  &.state--focus *{
+    border-color: map-get($theme-colors, primary);
+  }
+}
+
+
+
+.rating{
+  color: #000;
+  font-family: 'Font Awesome 5 Free';
+  &:before {
+    content: "\f005\f005\f005\f005\f005";
+  }
+}
+
+
+
+
+
+
+
+

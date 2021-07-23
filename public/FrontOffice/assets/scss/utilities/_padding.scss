@@ -1,0 +1,157 @@
+// Note: Space padding utility classes defined based on need. there are 3 things to note
+// 1. around padding available form 5-100 with space unit 5 like 5,10,15,20,25,30......100 
+// 2. Top, bottom, left, right padding available from 5-100 space unit 5 
+// 3. top and bottom padding not left and right extend from 100 to 200 and space unit 10 
+
+@for $i from 5 through 100 {
+  @if($i%5 == 0 ){
+    .padding-#{$i}{
+        padding: px-to-rem($i) !important;
+    }
+  }
+}
+@for $i from 5 through 100 {
+	@if($i%5 == 0 ){
+		.paddingTop-#{$i},
+        .padding-y-#{$i}{
+			padding-top: px-to-rem($i) !important;
+		}
+      
+        .paddingBottom-#{$i},
+        .padding-y-#{$i}{
+            padding-bottom: px-to-rem($i) !important;
+        }
+      
+		.paddingLeft-#{$i},
+        .padding-x-#{$i}{
+			padding-left: px-to-rem($i) !important;
+		}
+
+		.paddingRight-#{$i},
+        .padding-x-#{$i}{
+			padding-right: px-to-rem($i) !important;
+		}
+	}
+}
+
+@for $i from 110 through 200 {
+	@if($i%10 == 0 ){
+		.paddingTop-#{$i},
+        .padding-y-#{$i}{
+			padding-top: px-to-rem($i) !important;
+		}
+        .paddingBottom-#{$i},
+        .padding-y-#{$i}{
+            padding-bottom: px-to-rem($i) !important;
+        }
+      
+	}
+}
+
+
+
+//  Media 768 up 
+
+@media(min-width:768px){
+
+    @for $i from 5 through 100 {
+      @if($i%5 == 0 ){
+        .padding-md-#{$i}{
+            padding: px-to-rem($i) !important;
+        }
+      }
+    }
+    @for $i from 5 through 100 {
+        @if($i%5 == 0 ){
+            .paddingTop-md-#{$i},
+            .padding-y-md-#{$i}{
+                padding-top: px-to-rem($i) !important;
+            }
+
+            .paddingBottom-md-#{$i},
+            .padding-y-md-#{$i}{
+                padding-bottom: px-to-rem($i) !important;
+            }
+
+            .paddingLeft-md-#{$i},
+            .padding-x-md-#{$i}{
+                padding-left: px-to-rem($i) !important;
+            }
+
+            .paddingRight-md-#{$i},
+            .padding-x-md-#{$i}{
+                padding-right: px-to-rem($i) !important;
+            }
+        }
+    }
+
+    @for $i from 110 through 200 {
+        @if($i%10 == 0 ){
+            .paddingTop-md-#{$i},
+            .padding-y-md-#{$i}{
+                padding-top: px-to-rem($i) !important;
+            }
+          
+            .paddingBottom-md-#{$i},
+            .padding-y-md-#{$i}{
+                padding-bottom: px-to-rem($i) !important;
+            }
+
+        }
+    }
+
+
+}
+
+
+//  Media 768 up 
+
+@media(min-width:991px){
+
+    @for $i from 5 through 100 {
+      @if($i%5 == 0 ){
+        .padding-lg-#{$i}{
+            padding: px-to-rem($i) !important;
+        }
+      }
+    }
+    @for $i from 5 through 100 {
+        @if($i%5 == 0 ){
+            .paddingTop-lg-#{$i},
+            .padding-y-lg-#{$i}{
+                padding-top: px-to-rem($i) !important;
+            }
+
+            .paddingBottom-lg-#{$i},
+            .padding-y-lg-#{$i}{
+                padding-bottom: px-to-rem($i) !important;
+            }
+          
+            .paddingLeft-lg-#{$i},
+            .padding-x-lg-#{$i}{
+                padding-left: px-to-rem($i) !important;
+            }
+          
+            .paddingRight-lg-#{$i},
+            .padding-x-lg-#{$i}{
+                padding-right: px-to-rem($i) !important;
+            }
+        }
+    }
+
+    @for $i from 110 through 200 {
+        @if($i%10 == 0 ){
+            .paddingTop-lg-#{$i},
+            .padding-y-lg-#{$i}{
+                padding-top: px-to-rem($i) !important;
+            }
+          
+            .paddingBottom-lg-#{$i},
+            .padding-y-lg-#{$i}{
+                padding-bottom: px-to-rem($i) !important;
+            }
+
+        }
+    }
+    
+}

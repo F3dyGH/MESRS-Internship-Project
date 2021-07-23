@@ -1,0 +1,212 @@
+.carousel-inner 
+.carousel-item{
+  align-items: center;
+}
+
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+
+.carousel-control-prev,.carousel-control-next {
+  width: 7%;
+}
+
+button.owl-prev,
+button.owl-next{
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #fff !important;
+  top: 50%;
+  transform: translateY(-50%);
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .3s;
+  font-size: 12px;
+  box-shadow: 0 2px 30px 0 rgba(#000, .10)  !important;
+  &:hover {
+    background: theme-color(primary); 
+    color: #fff;
+  }
+}
+button.owl-prev {
+  left: -10px;
+  @media(min-width:768px){
+    left: -25px;
+  }
+}
+button.owl-next {
+  right: -10px;
+  @media(min-width:768px){
+    right: -25px;
+  }
+}
+
+
+// Arrow inside 
+.arrow-inside {
+  button.owl-prev {
+    left: 15px;
+  }
+  button.owl-next {
+    right: 15px;
+  }
+}
+
+// Arrow black 
+.arrow-black {
+  button.owl-prev,
+  button.owl-next {
+    background: rgba(#000, .50) !important;
+    color: #fff !important;
+    &:hover {
+      background: #000;
+    }
+  }
+}
+// Arrow-border
+.arrow-border {
+  button.owl-prev,
+  button.owl-next {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    color: #010101 !important;
+    border: 1px solid rgba(#000, .1);
+    &:hover {
+      background: #000;
+    }
+  }
+}
+
+// Arrow edge 
+.arrow-edge {
+  button.owl-prev,
+  button.owl-next{
+    width: 40px;
+    height: 60px;
+  }
+  button.owl-prev{
+    left: 0;
+    border-radius: 0 4px 4px 0;
+  }
+  button.owl-next {
+    right: 0;
+    border-radius: 4px 0 0 4px;
+  }
+}
+
+
+// Arrow square 
+.arrow-square {
+  button.owl-prev,
+  button.owl-next{
+    border-radius: 4px;
+  }
+}
+
+
+// Dots colors
+// Dots default 
+.owl-dots {
+  margin-top: 20px;
+  text-align: center;
+  .owl-dot{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: rgba(theme-color(primary), .30) !important;
+    border-radius: 50%;
+    margin: 5px;
+    transition: .3s;
+    &.active {
+      background: theme-color(primary) !important;
+    }
+  } 
+}
+
+.dots-line {
+  .owl-dot{
+    width: 40px;
+    height: 4px;
+    border-radius: 0;
+  }
+}
+// Dot black
+.dots-black {
+  .owl-dot{
+    background: rgba(#000, .25) !important;
+    &.active {
+      background: #000;
+    }
+  }
+}
+
+
+// Dot white
+.dots-white {
+  .owl-dot{
+    background: rgba(#fff, .30) !important;
+    &.active {
+      background: #fff;
+    }
+  }
+  &-outline {
+    .owl-dot{
+      background-color: transparent;
+      border: 1px solid #fff;
+      &.active {
+        background: #fff;
+      }
+    }
+  }
+}
+
+
+// Dots placement
+.dots-inset {
+  .owl-dots {
+    position: absolute;
+    padding: 15px;
+    width: 100%;
+    bottom: 15px;
+    text-align: center;
+  }
+}
+
+
+
+// show arrow on hover 
+.arrow-on-hover {
+  button.owl-prev,
+  button.owl-next{
+    opacity: 0;
+  }
+  &:hover {
+    button.owl-prev,
+    button.owl-next{
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+ 

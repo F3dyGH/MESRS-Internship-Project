@@ -1,0 +1,120 @@
+.ec-switch {
+  $this:&;
+  display: inline-block;
+  position: relative;
+  > input {
+    position: absolute;
+    opacity: 0;
+    &:checked ~ #{$this}__control{
+      &:after {
+        left: 32px;
+        background: #fff;
+      }
+    }
+    &[disabled]{
+      ~ #{$this}__control{
+        opacity: .7;
+        cursor: not-allowed;
+      }
+    }
+  }
+  
+  // Basic control 
+  &__control {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 30px;
+    border-radius: 10rem;
+    background: #d3d3da;
+    &:after {
+      content: "";
+      font-family: 'themify';
+      width: 26px;
+      height: 26px;
+      background: #dfe2ea;
+      border-radius: 50%;
+      position: absolute;
+      left: 2px;
+      transition: .3s;
+      top: 2px;
+      display: -webkit-inline-flex;
+      display: -moz-inline-flex;
+      display: -ms-inline-flex;
+      display: -o-inline-flex;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60%;
+      padding: 2px;
+    }
+  }
+  
+  // Switch icon 
+  &.switch-icon {
+    #{$this}__control {
+      &:after {
+        content: "\e646";
+      }
+    }
+    > input{
+      &:checked {
+        ~ #{$this}__control {
+          &:after {
+            content: "\e64c";
+          }
+        }
+      }
+    }
+  }
+  
+  
+  
+  // state color 
+  
+  &.switch{
+    &-primary {
+      > input {
+        &:checked ~ #{$this}__control{
+          background: map-get($theme-colors, primary);
+        }
+      }
+    }
+   &-success {
+      #{$this}__control {
+        background: map-get($theme-colors, success);
+      }
+    }
+   &-info {
+      #{$this}__control {
+        background: map-get($theme-colors, info);
+      }
+    }
+   &-warning {
+      #{$this}__control {
+        background: map-get($theme-colors, warning);
+      }
+    }
+   &-danger {
+      #{$this}__control {
+        background: map-get($theme-colors, danger);
+      }
+    }
+  }
+  
+// switch air 
+/*&.switch-air {
+  .#{$this}__control{
+    height: 12px;
+    width: 30px;
+    &:after {
+      width: 12px;
+      height: 12px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+   */
+  
+}

@@ -1,0 +1,11 @@
+.table td, .table th {
+  font-weight: normal;
+  vertical-align: middle !important;
+}
+.table-borderless tbody+tbody, .table-borderless td, .table-borderless th, .table-borderless thead th {
+  border: 0;
+}
+
+.table-bordered thead td, .table-bordered thead th, .table thead th {
+  border-bottom-width: 1px;
+}

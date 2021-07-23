@@ -1,0 +1,201 @@
+.ec-checkbox {
+  $this:&;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flex;
+  display: -o-inline-flex;
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+  > input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+    &:checked~ #{$this}__control {
+      color: #fff;
+      background:theme-color(primary);
+      border-color: theme-color(primary);
+      &:after {
+        transform:rotate(45deg) scale(1);
+        opacity: 1;
+        border-color:#fff;
+      }
+    }
+  }
+  
+  // Outline style check 
+  &.check-outline {
+    > input[type="checkbox"] {
+      &:checked~ #{$this}__control {
+        background-color: transparent;
+        border-color: theme-color(primary);
+        &:after {
+          border-color:theme-color(primary);
+        }
+      }
+    }
+      &.check-success {
+        > input[type="checkbox"] {
+          &:checked~ #{$this}__control {
+            background-color: transparent;
+            border-color:map-get($theme-colors, success);
+            &:after {
+              border-color:map-get($theme-colors, success);
+            }
+          }
+        }
+      }  
+      &.check-info {
+        > input[type="checkbox"] {
+          &:checked~ #{$this}__control {
+            background-color: transparent;
+            border-color:map-get($theme-colors, info);
+            &:after {
+              border-color:map-get($theme-colors, info);
+            }
+          }
+        }
+      } 
+      &.check-warning {
+        > input[type="checkbox"] {
+          &:checked~ #{$this}__control {
+            background-color: transparent;
+            border-color:map-get($theme-colors, warning);
+            &:after {
+              border-color:map-get($theme-colors, warning);
+            }
+          }
+        }
+      } 
+      &.check-danger {
+        > input[type="checkbox"] {
+          &:checked~ #{$this}__control {
+            background-color: transparent;
+            border-color:map-get($theme-colors, danger);
+            &:after {
+              border-color:map-get($theme-colors, danger);
+            }
+          }
+        }
+      } 
+  }
+  
+  
+  
+  // Color variant
+  &.check-success {
+    > input[type="checkbox"] {
+      &:checked~ #{$this}__control {
+        background: map-get($theme-colors, success);
+        border-color:map-get($theme-colors, success);
+      }
+    }
+  }  
+  &.check-info {
+    > input[type="checkbox"] {
+      &:checked~ #{$this}__control {
+        background: map-get($theme-colors, info);
+        border-color:map-get($theme-colors, info);
+      }
+    }
+  } 
+  &.check-warning {
+    > input[type="checkbox"] {
+      &:checked~ #{$this}__control {
+        background: map-get($theme-colors, warning);
+        border-color:map-get($theme-colors, warning);
+      }
+    }
+  } 
+  &.check-danger {
+    > input[type="checkbox"] {
+      &:checked~ #{$this}__control {
+        background: map-get($theme-colors, danger);
+        border-color:map-get($theme-colors, danger);
+      }
+    }
+  }
+  
+  
+  
+  
+  // checkbox base 
+  &__control {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #ccc;
+    position: relative;
+    margin-right: 10px;
+    border-radius: 2px;
+    transition:.3s;
+    flex: 0 0 auto;
+    &:after{ 
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform:rotate(45deg) scale(0);
+      opacity: 0;
+      width: 6px;
+      height: 11px;
+      margin-left: -3px;
+      margin-top: -8px;
+      border-width: 0 2px 2px 0;
+      border-color: #ccc;
+      border-style: solid;
+      transition: .3s;
+    }
+  }
+  
+
+  
+  // Checkbox size  
+  
+  &.check-xl {
+    font-size:1.1em;
+    #{$this}__control {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  
+  &.check-lg {
+    font-size:1.05em;
+    #{$this}__control {
+      width: 28px;
+      height: 28px; 
+    }
+  }
+  
+  &.check-sm {
+    font-size:.95em;
+    #{$this}__control {
+      width: 22px;
+      height: 22px; 
+    }
+  }
+  &.check-xs {
+    font-size:.9em;
+    #{$this}__control {
+      width: 18px;
+      height: 18px; 
+        &:after{ 
+        width: 5px;
+        height: 9px;
+        margin-left: -3px;
+        margin-top: -6px;
+      }
+    }
+  }
+  
+  
+  
+  // Checkbox rounded 
+  &.check-rounded {
+    #{$this}__control {
+      border-radius: 50%;
+    }
+  }
+  
+
+}

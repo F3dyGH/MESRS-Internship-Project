@@ -1,0 +1,108 @@
+// Footer top
+.footer-top {
+  background: #202428;
+  color: rgba(#fff, .60);
+  padding-top: 70px;
+  padding-bottom: 100px;
+}
+
+.educati-socail {
+  > li {
+    display: inline-block;
+    margin-right: 6px;
+    &:last-child {
+      margin-right: 0;
+    } 
+    > a {
+      width: 40px;
+      height: 40px;
+      border-radius: 1000em;
+      background: rgba(theme-color(primary), .10);
+      color: theme-color(primary);
+      padding: 5px;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        background: theme-color(primary);
+        color: #fff;
+      }
+    }
+  }
+}
+
+.footer-widget{
+  &.widget_mc4wp_form_widget {
+    input {
+      border-radius: 6px;
+      padding: 12px 30px;
+    }
+    input[type="submit"] {
+      background: theme-color(primary);
+      color: #000;
+      width: auto;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      color: #fff;
+      padding-left: 40px;
+      padding-right: 40px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer
+    }
+  }
+  
+  &__title{
+    font-weight: 600;
+    margin-bottom: 70px;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #fff;
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: theme-color(primary);
+      border-radius: 4px;
+      top: 100%;
+      margin-top: 25px;
+    }
+  }
+}
+
+///Footer bottom 
+
+.footer-bottom{
+  background: #121416;
+  color: rgba(#fff, .50);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

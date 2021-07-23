@@ -1,0 +1,86 @@
+.border{
+    // Border style 
+	&-dashed {
+      border-style: dashed  !important;
+	}
+	&-dotted {
+		border-style: dotted !important;
+	}
+}
+
+
+/// Border only for > 768px
+
+@media (min-width:grid-breakpoints('md')){
+  .border{
+    &-md-top{
+      border-top: 1px solid #dee2e6 !important;
+    }
+    &-md-bottom{
+      border-bottom: 1px solid #dee2e6 !important;
+    }
+    &-md-left{
+      border-left: 1px solid #dee2e6 !important;
+    }
+    &-md-right{
+      border-right: 1px solid #dee2e6 !important;
+    }
+  }
+}
+
+/// Border only for > 992px
+@media (min-width:grid-breakpoints('lg')){
+  .border{
+    &-lg-top{
+      border-top: 1px solid #dee2e6 !important;
+    }
+    &-lg-bottom{
+      border-bottom: 1px solid #dee2e6 !important;
+    }
+    &-lg-left{
+      border-left: 1px solid #dee2e6 !important;
+    }
+    &-lg-right{
+      border-right: 1px solid #dee2e6 !important;
+    }
+  }
+}
+
+
+/// Border width 
+@for $i from 2 through 6 {
+	.border-#{$i}{
+		border-width: #{$i}px !important;
+	}
+}
+
+
+// Border color
+.border-light-v1 {
+  border-color: #a5a5ac !important;
+
+}
+.border-light-v2{
+  border-color: #b7b7bf !important;
+}
+
+.border-light-v3 {
+  border-color: #cbcbd3 !important;
+}
+
+
+// Border white opacity 
+@for $i from 1 through 9{
+  .border-white-0_#{$i}{
+     border-color: rgba(#fff, $i/10) !important;  
+  }
+}
+
+// Border dark opacity 
+@for $i from 1 through 9{
+  .border-black-0_#{$i}{
+     border-color: rgba(#000, $i/10) !important; 
+  }
+}
+
+

@@ -13,12 +13,12 @@ class BaseController extends AbstractController
      */
     public function indexBack(): Response
     {
-        return $this->render('BackOffice/login.html.twig', [
+        return $this->render('BackOffice/base.html.twig', [
             'controller_name' => 'BaseController',
         ]);
     }
     /**
-     * @Route("/educati", name="educati")
+     * @Route("/home", name="educati")
      */
     public function indexFront(): Response
     {
