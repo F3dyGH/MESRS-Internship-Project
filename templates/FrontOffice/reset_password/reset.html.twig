@@ -1,0 +1,44 @@
+{% extends 'FrontOffice/base.html.twig' %}
+
+{% block title %}Reset your password{% endblock %}
+
+{% block content %}
+   {# <h1>Reset your password</h1>
+
+    {{ form_start(resetForm) }}
+        {{ form_row(resetForm.plainPassword) }}
+        <button class="btn btn-primary">Reset password</button>
+    {{ form_end(resetForm) }}#}
+    <section class="padding-y-100 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <div class="card shadow-v2">
+                        <div class="card-header px-lg-5 border-bottom">
+                            <h4 class="mt-4">Reset Your Password</h4>
+                        </div>
+                        <div class="card-body">
+                            {{ form_start(resetForm) }}
+                            <form action="#" method="POST" class="px-lg-5">
+                                <div class="input-group input-group--focus marginBottom-40">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-white "></span>
+                                    </div>
+                                    {{ form_widget(resetForm.plainPassword,{attr: {class: 'form-control border-left-0 pl-0','placeholder':'Email'}}) }}
+
+                                </div>
+                                <button class="btn btn-block btn-primary mb-5">
+                                    Reset Password
+                                </button>
+                                {{ form_end(resetForm) }}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END row-->
+        </div>
+        <!-- END container-->
+    </section>
+
+{% endblock %}

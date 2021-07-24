@@ -1,0 +1,28 @@
+{% extends 'FrontOffice/base.html.twig' %}
+
+{% block title %}Password Reset Email Sent{% endblock %}
+
+{% block content %}
+    <section class="padding-y-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2>
+                        <i class="fas fa-check-circle text-success mr-1"></i> Success
+                    </h2>
+                    <h4 class="my-4">An Email has been sent</h4>
+                    <p>
+                        If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password.
+                        This link will expire in {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
+                    </p>
+                    <p>
+                    If you don't receive an email please check your spam folder or <a class="text-primary" href="{{ path('app_forgot_password') }}">try again</a>.
+                    </p>
+{#                    <a href="{{ path('educati') }}" class="btn btn-primary mt-4">Back to home</a>#}
+                </div>
+            </div>
+            <!-- END row-->
+        </div>
+        <!-- END container-->
+    </section>
+{% endblock %}
