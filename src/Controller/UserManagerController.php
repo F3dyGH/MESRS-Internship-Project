@@ -53,4 +53,22 @@ class UserManagerController extends AbstractController
             "userForm" => $form->createView(),
         ]);
     }
+    /**
+     *@Route ("/profile" , name="profile")
+     */
+    public function profile()
+    {
+        $hasAccess = $this->isGranted('ROLE_INST');
+        if ($hasAccess) {
+            return $this->render("FrontOffice/profile/InstProfile.html.twig");
+        } else {
+            return $this->render("FrontOffice/profile/StudProfile.html.twig");
+        }
+    }
+//    /**
+//     *@Route ("/profile" , name="instprofile")
+//     */
+//    public function profile(){
+//        return $this->render("FrontOffice/profile/InstProfile.html.twig");
+//    }
 }

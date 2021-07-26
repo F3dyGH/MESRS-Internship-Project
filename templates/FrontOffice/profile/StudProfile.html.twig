@@ -1,0 +1,421 @@
+{% extends 'FrontOffice/base.html.twig' %}
+{% block title %} {{ app.user.name }} - Profile{% endblock %}
+{%  block content %}
+    <section class="paddingTop-50 paddingBottom-100 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mt-4">
+                    <div class="card shadow-v1">
+                        <div class="card-header text-center border-bottom pt-5 mb-4">
+                            <img
+                                    class="rounded-circle mb-4"
+                                    src="{{ asset('FrontOffice/assets/img/262x230/7.jpg') }}"
+                                    width="200"
+                                    height="200"
+                                    alt=""
+                            />
+                            <h4>John Doe</h4>
+                            <p>Love to eat food</p>
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item m-2">
+                                    <i class="ti-shopping-cart text-primary"></i>
+                                    <span class="d-block">Courses Order</span>
+                                    <span class="h6">35</span>
+                                </li>
+                                <li class="list-inline-item m-2">
+                                    <i class="ti-heart text-primary"></i>
+                                    <span class="d-block">Wishlist</span>
+                                    <span class="h6">27</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body border-bottom">
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <span class="d-block">Email address:</span>
+                                    <a class="h6" href="mailto:saifullah@gmail.com"
+                                    >saifullah@gmail.com</a
+                                    >
+                                </li>
+                                <li class="mb-3">
+                                    <span class="d-block">Phone:</span>
+                                    <a class="h6" href="mailto:saifullah@gmail.com"
+                                    >+91 654 784 547</a
+                                    >
+                                </li>
+                                <li class="mb-3">
+                                    <span class="d-block">Location:</span>
+                                    <a class="h6" href="mailto:saifullah@gmail.com"
+                                    >South Street, London, UK</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <p>Social Profile:</p>
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item">
+                                    <a
+                                            href="#"
+                                            class="btn btn-outline-facebook iconbox iconbox-sm"
+                                    >
+                                        <i class="ti-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a
+                                            href="#"
+                                            class="btn btn-outline-twitter iconbox iconbox-sm"
+                                    >
+                                        <i class="ti-twitter"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a
+                                            href="#"
+                                            class="btn btn-outline-google-plus iconbox iconbox-sm"
+                                    >
+                                        <i class="ti-google"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a
+                                            href="#"
+                                            class="btn btn-outline-linkedin iconbox iconbox-sm"
+                                    >
+                                        <i class="ti-linkedin"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- END col-md-4 -->
+                <div class="col-lg-8 mt-4">
+                    <div class="card padding-30 shadow-v1">
+                        <ul
+                                class="nav tab-line tab-line border-bottom mb-4"
+                                role="tablist"
+                        >
+                            <li class="nav-item">
+                                <a
+                                        class="nav-link active"
+                                        data-toggle="tab"
+                                        href="#Tabs_1-1"
+                                        role="tab"
+                                        aria-selected="true"
+                                >
+                                    <i class="ti-download mr-1"></i>
+                                    Purchase Courses
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                        class="nav-link"
+                                        data-toggle="tab"
+                                        href="#Tabs_1-2"
+                                        role="tab"
+                                        aria-selected="true"
+                                >
+                                    <i class="ti-heart mr-1"></i>
+                                    Wishlist
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div
+                                    class="tab-pane fade show active"
+                                    id="Tabs_1-1"
+                                    role="tabpanel"
+                            >
+                                <div class="table-responsive my-4">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Order ID</th>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th
+                                                    scope="row"
+                                                    class="text-dark font-weight-semiBold"
+                                            >
+                                                #00004673
+                                            </th>
+                                            <td>01 Aug 2021</td>
+                                            <td>$49</td>
+                                            <td>
+                                                <a href="#" class="btn btn-link">View</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th
+                                                    scope="row"
+                                                    class="text-dark font-weight-semiBold"
+                                            >
+                                                #05604673
+                                            </th>
+                                            <td>07 Aug 2021</td>
+                                            <td>$300</td>
+                                            <td>
+                                                <a href="#" class="btn btn-link">View</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th
+                                                    scope="row"
+                                                    class="text-dark font-weight-semiBold"
+                                            >
+                                                #07O4673
+                                            </th>
+                                            <td>16 Aug 2021</td>
+                                            <td>$34</td>
+                                            <td>
+                                                <a href="#" class="btn btn-link">View</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th
+                                                    scope="row"
+                                                    class="text-dark font-weight-semiBold"
+                                            >
+                                                #06454673
+                                            </th>
+                                            <td>24 Aug 2021</td>
+                                            <td>$10</td>
+                                            <td>
+                                                <a href="#" class="btn btn-link">View</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th
+                                                    scope="row"
+                                                    class="text-dark font-weight-semiBold"
+                                            >
+                                                #0000435
+                                            </th>
+                                            <td>28 Aug 2021</td>
+                                            <td>$199</td>
+                                            <td>
+                                                <a href="#" class="btn btn-link">View</a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END tab-pane -->
+                            <div class="tab-pane fade" id="Tabs_1-2" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-md-6 mt-4">
+                                        <a
+                                                href="page-course-details.html"
+                                                class="card text-gray overflow-hidden height-100p shadow-v1 border"
+                                        >
+												<span
+                                                        class="ribbon-badge font-size-sm bg-success text-white"
+                                                >Best selling</span
+                                                >
+                                            <img
+                                                    class="card-img-top"
+                                                    src="{{ asset('FrontOffice/assets/img/360x220/1.jpg') }}"
+                                                    alt=""
+                                            />
+                                            <div class="card-body">
+                                                <h4 class="h5">The Web Developer Bootcamp</h4>
+                                                <p class="my-3">
+                                                    <i class="ti-user mr-2"></i>
+                                                    Andrew Mead
+                                                </p>
+                                                <p class="mb-0">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <span class="text-dark">5</span>
+                                                    <span>(4578)</span>
+                                                </p>
+                                            </div>
+                                            <div
+                                                    class="card-footer media align-items-center justify-content-between"
+                                            >
+                                                <ul class="list-unstyled mb-0">
+                                                    <li class="mb-1">
+                                                        <i class="ti-headphone small mr-2"></i>
+                                                        46 lectures
+                                                    </li>
+                                                    <li class="mb-1">
+                                                        <i class="ti-time small mr-2"></i>
+                                                        27.5 hours
+                                                    </li>
+                                                </ul>
+                                                <h4 class="h5">
+                                                    <span class="text-primary">$180</span>
+                                                </h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6 mt-4">
+                                        <a
+                                                href="page-course-details.html"
+                                                class="card text-gray overflow-hidden height-100p shadow-v1 border"
+                                        >
+                                            <img
+                                                    class="card-img-top"
+                                                    src="{{ asset('FrontOffice/assets/img/360x220/2.jpg') }}"
+                                                    alt=""
+                                            />
+                                            <div class="card-body">
+                                                <h4 class="h5">C++ Essential Training</h4>
+                                                <p class="my-3">
+                                                    <i class="ti-user mr-2"></i>
+                                                    Andrew Mead, John Doe
+                                                </p>
+                                                <p class="mb-0">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star-half"></i>
+                                                    <span class="text-dark">4.9</span>
+                                                    <span>(8793)</span>
+                                                </p>
+                                            </div>
+                                            <div
+                                                    class="card-footer media align-items-center justify-content-between"
+                                            >
+                                                <ul class="list-unstyled mb-0">
+                                                    <li class="mb-1">
+                                                        <i class="ti-headphone small mr-2"></i>
+                                                        46 lectures
+                                                    </li>
+                                                    <li class="mb-1">
+                                                        <i class="ti-time small mr-2"></i>
+                                                        27.5 hours
+                                                    </li>
+                                                </ul>
+                                                <h4 class="h5 text-right">
+                                                    <span class="text-primary d-block">$10</span>
+                                                    <s class="small">$129</s>
+                                                </h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6 mt-4">
+                                        <a
+                                                href="page-course-details.html"
+                                                class="card text-gray overflow-hidden height-100p shadow-v1 border"
+                                        >
+                                            <img
+                                                    class="card-img-top"
+                                                    src="{{ asset('FrontOffice/assets/img/360x220/3.jpg') }}"
+                                                    alt=""
+                                            />
+                                            <div class="card-body">
+                                                <h4 class="h5">Programming Real-World Examples</h4>
+                                                <p class="my-3">
+                                                    <i class="ti-user mr-2"></i>
+                                                    Adam Kury
+                                                </p>
+                                                <p class="mb-0">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span class="text-dark">3.4</span>
+                                                    <span>(7)</span>
+                                                </p>
+                                            </div>
+                                            <div
+                                                    class="card-footer media align-items-center justify-content-between"
+                                            >
+                                                <ul class="list-unstyled mb-0">
+                                                    <li class="mb-1">
+                                                        <i class="ti-headphone small mr-2"></i>
+                                                        46 lectures
+                                                    </li>
+                                                    <li class="mb-1">
+                                                        <i class="ti-time small mr-2"></i>
+                                                        27.5 hours
+                                                    </li>
+                                                </ul>
+                                                <h4 class="h5">
+                                                    <span class="text-primary">$249</span>
+                                                </h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6 mt-4">
+                                        <a
+                                                href="page-course-details.html"
+                                                class="card text-gray overflow-hidden height-100p shadow-v1 border shadow-v1"
+                                        >
+                                            <img
+                                                    class="card-img-top"
+                                                    src="{{ asset('FrontOffice/assets/img/360x220/4.jpg') }}"
+                                                    alt=""
+                                            />
+                                            <div class="card-body">
+                                                <h4 class="h5">Java 8 Essential Training</h4>
+                                                <p class="my-3">
+                                                    <i class="ti-user mr-2"></i>
+                                                    Anthony Brooks
+                                                </p>
+                                                <p class="mb-0">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <span class="text-dark">5</span>
+                                                    <span>(4578)</span>
+                                                </p>
+                                            </div>
+                                            <div
+                                                    class="card-footer media align-items-center justify-content-between"
+                                            >
+                                                <ul class="list-unstyled mb-0">
+                                                    <li class="mb-1">
+                                                        <i class="ti-headphone small mr-2"></i>
+                                                        46 lectures
+                                                    </li>
+                                                    <li class="mb-1">
+                                                        <i class="ti-time small mr-2"></i>
+                                                        27.5 hours
+                                                    </li>
+                                                </ul>
+                                                <h4 class="h5">
+                                                    <span class="text-success">Free</span>
+                                                </h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 text-center mt-5">
+                                        <a href="#" class="btn btn-icon btn-outline-primary">
+                                            <i class="ti-reload mr-2"></i>
+                                            Load More
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- END row-->
+                            </div>
+                            <!-- END tab-pane -->
+                        </div>
+                        <!-- END tab-content-->
+                    </div>
+                    <!-- END card-->
+                </div>
+                <!-- END col-md-8 -->
+            </div>
+            <!--END row-->
+        </div>
+        <!--END container-->
+    </section>
+{% endblock %}
