@@ -24,7 +24,8 @@ class UserRoleType extends AbstractType
                     ]),
                 ],
                 'required' => true,
-                'attr' => ['class' =>'form-control'],
+                'attr' => ['class' =>'form-control', 'disabled'],
+                'disabled' => true,
             ])
             ->add('roles', ChoiceType::class, [
                 'choices' => [
@@ -36,7 +37,9 @@ class UserRoleType extends AbstractType
                 'multiple' => true,
                 'label' => 'Roles'
             ])
-        ->add('Submit', SubmitType::class)
+        ->add('Submit', SubmitType::class, [
+            'attr' => ['class' => 'btn btn-primary']
+        ])
         ;
     }
 
