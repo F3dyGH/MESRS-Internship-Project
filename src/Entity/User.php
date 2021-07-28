@@ -5,7 +5,11 @@ namespace App\Entity;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Vich\UploaderBundle\Entity\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -55,6 +59,25 @@ class User implements UserInterface
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image;
+
+    /**
+     * @Vich\UploadableField(mapping="user", fileNameProperty="image")
+     * @var File
+     */
+    private $imageFile;
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $description;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $about;
 
     public function getId(): ?int
     {
@@ -66,12 +89,55 @@ class User implements UserInterface
         return $this->email;
     }
 
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
     public function setEmail(string $email): self
     {
         $this->email = $email;
 
         return $this;
     }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    public function setImageFile(?\Symfony\Component\HttpFoundation\File\File $image)
+    {
+        $this->imageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        // if ($image instanceof UploadedFile) {
+        // // if 'updatedAt' is not defined in your entity, use another property
+        // $this->setUpdatedAt(new \DateTime('now'));
+        // }
+    }
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
 
     /**
      * A visual identifier that represents this user.
@@ -80,7 +146,7 @@ class User implements UserInterface
      */
     public function getUsername(): string
     {
-        return (string) $this->username;
+        return (string)$this->username;
     }
 
     /**
@@ -183,4 +249,16 @@ class User implements UserInterface
         // Or change the property that you want to show in the select.
         return $this->roles;
     }*/
+
+    public function getAbout(): ?string
+    {
+        return $this->about;
+    }
+
+    public function setAbout(?string $about): self
+    {
+        $this->about = $about;
+
+        return $this;
+    }
 }
