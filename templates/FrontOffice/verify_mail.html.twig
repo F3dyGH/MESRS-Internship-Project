@@ -1,0 +1,28 @@
+{% extends 'FrontOffice/body.html.twig' %}
+{% block breadcrumb %}<span></span>{% endblock %}
+{% block pagetitle %}<span></span>{% endblock %}
+{% block title %}Activation Email has been Sent{% endblock %}
+
+{% block content %}
+    <section class="padding-y-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2>
+                        <i class="fas fa-clock text-success mr-1"></i> We are waiting for your answer
+                    </h2>
+                    <h4 class="my-4">An Email has been sent</h4>
+                    <p>
+                        Check your email to confirm and activate your account
+                    </p>
+                    <p>
+                        If you don't receive an email please check your spam folder or <a class="text-primary" href="{{ path('verify') }}">try again</a>.
+                    </p>
+                    {#                    <a href="{{ path('educati') }}" class="btn btn-primary mt-4">Back to home</a>#}
+                </div>
+            </div>
+            <!-- END row-->
+        </div>
+        <!-- END container-->
+    </section>
+{% endblock %}

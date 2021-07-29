@@ -101,7 +101,7 @@
                         class="list-inline-item mr-0 p-md-3 p-2 border-right border-left border-white-0_1"
                 >
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                       <a href="{{ path('profile') }}"> <span class="ti-user"></span> {{ app.user.name }} </a>
+                       <a href="{{ path('account') }}"> <span class="ti-user"></span> {{ app.user.name }} </a>
                     {% else %}
                     <a href="{{ path('app_login') }}">Login</a>
                     {% endif %}
@@ -1079,15 +1079,14 @@
         </div>
     </form>
 </div>
-<!-- END site-search-->
 
-<!-- Page breadcrumb -->
-{% block breadcrumb %}
 
-    <!-- END page breadcrumb-->
-{% endblock %}
-
-{% block content %}{% endblock %}
+{% for message in app.flashes('alert') %}
+    <div class="alert alert-warning" style="align-content: center;">
+        {{ message }} <a href="{{ path('verify') }}">Click Here to verify !</a>
+    </div>
+{% endfor %}
+{% block body %}{% endblock %}
 
 
 <footer class="site-footer">

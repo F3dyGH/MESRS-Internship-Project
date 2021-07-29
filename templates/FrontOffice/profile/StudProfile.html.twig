@@ -1,5 +1,27 @@
-{% extends 'FrontOffice/base.html.twig' %}
-{% block title %} {{ app.user.name }} - Profile{% endblock %}
+{% extends 'FrontOffice/body.html.twig' %}
+{% block title %} {{ app.user.name }} - Account{% endblock %}
+{% block breadcrumb %}
+    <div
+            class="padding-y-80 bg-cover"
+            data-dark-overlay="6"
+            style="background: url({{ asset('front/assets/img/breadcrumb-bg.jpg') }}) no-repeat"
+    >
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 text-white">
+                    <ol
+                            class="breadcrumb breadcrumb-double-angle bg-transparent mb-0 p-0 hidden"
+                    >
+                        <li class="breadcrumb-item"><a href="{{ path('educati') }}">Home</a></li>
+                        <li class="breadcrumb-item" style="color: #0aa60f">{{ app.user.name }}'s Account</li>
+                    </ol>
+                    {% block pagetitle %}<h2 class="h1">{{ app.user.name }}'s Account</h2> {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
 {% block content %}
     <section class="paddingTop-50 paddingBottom-100 bg-light">
         <div class="container">

@@ -1,0 +1,39 @@
+{% extends 'FrontOffice/base.html.twig' %}
+
+{% block body %}
+{% block breadcrumb %}
+    <div
+            class="padding-y-80 bg-cover"
+            data-dark-overlay="6"
+            style="background: url({{ asset('front/assets/img/breadcrumb-bg.jpg') }}) no-repeat"
+    >
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 text-white">
+                    <ol
+                            class="breadcrumb breadcrumb-double-angle bg-transparent mb-0 p-0"
+                    >
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Page</a></li>
+                        <li class="breadcrumb-item active">Page Titre</li>
+                    </ol>
+                    {% block pagetitle %} <h2 class="h1">Page Titre</h2>{% endblock %}
+
+                </div>
+                <!-- END col-12 -->
+            </div>
+            <!-- END row-->
+        </div>
+        <!-- END container-->
+    </div>
+
+{% endblock %}
+
+
+                    <!-- Page content yet7at hna -->
+                    {% block content %}
+                    {% endblock content %}
+
+
+    <script src="https://js.stripe.com/v3/"></script>
+{% endblock %}

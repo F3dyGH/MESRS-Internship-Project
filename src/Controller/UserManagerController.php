@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Security\LoginAuthenticator;
 use App\Form\UserRoleType;
 use App\Form\UserType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -75,7 +74,7 @@ class UserManagerController extends AbstractController
     }
 
     /**
-     * @Route ("/profile" , name="profile")
+     * @Route ("/account" , name="account")
      */
     public function profile(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {

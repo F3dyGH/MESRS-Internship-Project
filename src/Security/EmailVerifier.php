@@ -23,6 +23,13 @@ class EmailVerifier
         $this->entityManager = $manager;
     }
 
+    /**
+     * @param string $verifyEmailRouteName
+     * @param UserInterface $user
+     * @param TemplatedEmail $email
+     * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
+     * @Route ("/verif", name ="verif")
+     */
     public function sendEmailConfirmation(string $verifyEmailRouteName, UserInterface $user, TemplatedEmail $email): void
     {
         $signatureComponents = $this->verifyEmailHelper->generateSignature(
