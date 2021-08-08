@@ -41,27 +41,34 @@ class BaseController extends AbstractController
     /**
      * @Route("/home", name="educati")
      */
-    public function indexFront(UserInterface $user, Request $request): Response
+    public function indexFront(): Response
     {
-        $u = $this->security->getUser();
+        $u = $this->security->isGranted('ROLE_USER');
+        $us = $this->security->getUser();
         $entityManager = $this->getDoctrine()->getManager();
         $user = $entityManager->getRepository(User::class)->find($u);
-
-        if ($user->IsVerified() == false) {
-            $this->addFlash('alert', 'Please verify your email to activate your account and enjoy our features,');
-            /*if ($request) {
-                $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
-                    (new TemplatedEmail())
-                        ->from(new Address('infos@educati.com', 'Educati-infos'))
-                        ->to($user->getEmail())
-                        ->subject('Please Confirm your Email')
-                        ->htmlTemplate('FrontOffice/registration/confirmation_email.html.twig')
-                );
-            }*/
+        if($user) {
+            if ($us->IsVerified() == false) {
+                $this->addFlash('alert', 'Please verify your email to activate your account and enjoy our features,');
+                /*if ($request) {
+                    $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
+                        (new TemplatedEmail())
+                            ->from(new Address('infos@educati.com', 'Educati-infos'))
+                            ->to($user->getEmail())
+                            ->subject('Please Confirm your Email')
+                            ->htmlTemplate('FrontOffice/registration/confirmation_email.html.twig')
+                    );
+                }*/
+            }
+            return $this->render('FrontOffice/base.html.twig', [
+                'controller_name' => 'BaseController',
+            ]);
         }
-        return $this->render('FrontOffice/base.html.twig', [
-            'controller_name' => 'BaseController',
-        ]);
+        else{
+            return $this->render('FrontOffice/base.html.twig', [
+                'controller_name' => 'BaseController',
+            ]);
+        }
     }
     /**
      * @Route ("verify", name="verify")

@@ -30,15 +30,21 @@ class UserType extends AbstractType
             ->add('name')
             ->add('lastname')
             ->add('username')
-            ->add('about',TextareaType::class)
-            //->add('image',HiddenType::class)
+            ->add('about', TextareaType::class)
+            ->add('image', HiddenType::class)
             ->add('description')
-            //->add('imageFile',VichImageType::class)
+            ->add('imageFile', VichImageType::class,[
+                'image_uri' => false,
+                'allow_delete' => true,
+                'delete_label' => 'Remove Avatar    ',
+                'required' => false,
+                'download_uri' => false,
+            ])
             ->add('plainPassword', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'required' => false,
                 'first_options' => [
-                    'attr' => [ 'placeholder'=> 'New Password','class' => 'form-control'],
+                    'attr' => ['placeholder' => 'New Password', 'class' => 'form-control'],
                     'constraints' => [
                         new Length([
                             'min' => 6,
@@ -48,11 +54,11 @@ class UserType extends AbstractType
                         ]),
                     ],
                     'label' => false,
-                    'label_attr'=>['class'=>'col-form-label text-dark'],
+                    'label_attr' => ['class' => 'col-form-label text-dark'],
 //                    'required'=>false,
                 ],
                 'second_options' => [
-                    'attr' => ['autocomplete' => 'new-password', 'placeholder'=> 'Confirm Password','class' => 'form-control'],
+                    'attr' => ['autocomplete' => 'new-password', 'placeholder' => 'Confirm Password', 'class' => 'form-control'],
                     'label' => false,
 //                    'required'=>false,
                 ],
@@ -60,8 +66,7 @@ class UserType extends AbstractType
                 // Instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

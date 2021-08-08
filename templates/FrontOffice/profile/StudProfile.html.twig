@@ -29,13 +29,26 @@
                 <div class="col-lg-4 mt-4">
                     <div class="card shadow-v1">
                         <div class="card-header text-center border-bottom pt-5 mb-4">
-                            <img
+                            {% if app.user.image%}
+                                <img class="rounded-circle mb-4"
+                                     src="{{ asset('images/user/' ~ app.user.image) }}"
+                                     width="200"
+                                     height="200"
+                                     alt=""/>
+                            {% else %}
+                                <img class="rounded-circle mb-4"
+                                        src="{{ asset('FrontOffice/assets/img/262x230/7.jpg') }}"
+                                     width="200"
+                                     height="200"
+                                     alt=""/>
+                            {% endif %}
+                            {# <img
                                     class="rounded-circle mb-4"
                                     src="{{ asset('FrontOffice/assets/img/262x230/7.jpg') }}"
                                     width="200"
                                     height="200"
                                     alt=""
-                            />
+                            /> #}
                             <h4>{{ app.user.name }} {{ app.user.lastname }}</h4>
                             <h6>{{ app.user.username }}</h6>
                             <p>{{ app.user.description }}</p>
@@ -465,18 +478,24 @@
                                                     type="file"
                                                     class="opacity-0 position-absolute as-parent"
                                             />
-                                            <img src="{{ asset('FrontOffice/assets/img/placeholder-1.jpg') }}" alt=""/>
+                                            {% if app.user.image %}
+                                                <img src="{{ asset('images/user/' ~ app.user.image) }}" alt=""/>
+                                            {% else %}
+                                                <img src="{{ asset('FrontOffice/assets/img/placeholder-1.jpg') }}" alt="" />
+                                            {% endif %}
+
                                         </div>
                                         <div class="media-body ml-4 mb-4 mb-md-0">
                                             <p>JPG or PNG 200x200 px</p>
                                             <a href=""></a>
-                                            <button class="btn btn-outline-primary">
+                                            {# <button class="btn btn-outline-primary">
                                                 <input
                                                         type="file"
                                                         class="opacity-0 position-absolute"
                                                 />
                                                 Upload
-                                            </button>
+                                            </button> #}
+                                            {{ form_widget(userEditForm.imageFile) }}
                                         </div>
                                     </div>
                                 </div>
