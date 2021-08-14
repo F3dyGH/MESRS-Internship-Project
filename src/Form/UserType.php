@@ -35,8 +35,8 @@ class UserType extends AbstractType
             ->add('description')
             ->add('imageFile', VichImageType::class,[
                 'image_uri' => false,
-                'allow_delete' => true,
-                'delete_label' => 'Remove Avatar    ',
+                'allow_delete' => false,
+                'delete_label' => 'Remove Avatar',
                 'required' => false,
                 'download_uri' => false,
             ])

@@ -83,7 +83,29 @@ class UserManagerController extends AbstractController
         $user = $entityManager->getRepository(User::class)->find($u);
         $hasAccess = $this->isGranted('ROLE_INST');
         if ($hasAccess) {
-            return $this->render("FrontOffice/profile/InstProfile.html.twig");
+            $form1 = $this->createForm(UserType::class, $user);
+            $form1->handleRequest($request);
+
+
+            if ($form1->isSubmitted() && $form1->isValid()) {
+
+                $entityManager = $this->getDoctrine()->getManager();
+                // move_uploaded_file($_FILES['image',''])
+                //$entityManager->flush();
+                // Encode the plain password, and set it.
+                $encodedPassword = $passwordEncoder->encodePassword(
+                    $user,
+                    $form1->get('plainPassword')->getData()
+                );
+
+                $user->setPassword($encodedPassword);
+                $entityManager->flush();
+                $this->addFlash('success', 'Informations Updated!');
+            }
+            return $this->render("FrontOffice/profile/InstProfile.html.twig", [
+                "form_title" => "Edit infos",
+                "userEditForm" => $form1->createView(),
+            ]);
         } else {
             $form = $this->createForm(UserType::class, $user);
             $form->handleRequest($request);
