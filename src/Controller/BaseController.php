@@ -60,12 +60,12 @@ class BaseController extends AbstractController
                     );
                 }*/
             }
-            return $this->render('FrontOffice/base.html.twig', [
+            return $this->render('FrontOffice/home/home.html.twig', [
                 'controller_name' => 'BaseController',
             ]);
         }
         else{
-            return $this->render('FrontOffice/base.html.twig', [
+            return $this->render('FrontOffice/home/home.html.twig', [
                 'controller_name' => 'BaseController',
             ]);
         }

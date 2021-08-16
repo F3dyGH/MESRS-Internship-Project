@@ -5,9 +5,9 @@
 
     <!-- Title-->
 
-        <title>
-            {% block title %}  Educati {% endblock %}
-        </title>
+    <title>
+        {% block title %}  Educati {% endblock %}
+    </title>
 
     <!-- SEO Meta-->
     <meta name="description" content="Education theme by EchoTheme"/>
@@ -101,19 +101,19 @@
                         class="list-inline-item mr-0 p-md-3 p-2 border-right border-left border-white-0_1"
                 >
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                       <a href="{{ path('account') }}"> <span class="ti-user"></span> {{ app.user.name }} </a>
+                        <a href="{{ path('account') }}"> <span class="ti-user"></span> {{ app.user.name }} </a>
                     {% else %}
-                    <a href="{{ path('app_login') }}">Login</a>
+                        <a href="{{ path('app_login') }}">Login</a>
                     {% endif %}
                 </li>
                 <li
                         class="list-inline-item mr-0 p-md-3 p-2 border-right border-white-0_1"
                 >
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <a href="{{ path('app_logout') }}"> <span class="ti-power-off"></span> Log Out </a>
+                        <a href="{{ path('app_logout') }}"> <span class="ti-power-off"></span> Log Out </a>
 
                     {% else %}
-                    <a href="{{ path('app_register') }}">Register</a>
+                        <a href="{{ path('app_register') }}">Register</a>
                     {% endif %}
                 </li>
             </ul>
@@ -155,7 +155,7 @@
                                 href="{{ path('educati') }}"
                         >Home</a
                         >
-{#
+                        {#
                         <div class="dropdown-menu left-auto p-2 p-md-4">
 
                             <div class="row mx-0">
@@ -220,7 +220,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>#}
+                        </div> #}
                     </li>
 
                     <li class="nav-item nav-item__has-dropdown">
@@ -685,7 +685,6 @@
                             </ul>
                         </div>
                     </li>
-
                     <li class="nav-item nav-item__has-megamenu">
                         <a
                                 class="nav-link dropdown-toggle"
@@ -971,6 +970,7 @@
                             </div>
                         </div>
                     </li>
+
                 </ul>
             </div>
             <div class="nav-toolbar">
@@ -1053,6 +1053,25 @@
                             <i class="ti-search"></i>
                         </a>
                     </li>
+                    {% if is_granted('ROLE_STUD') %}
+                        <li class="nav-item nav-item__has-megamenu megamenu-col-2 ">
+                            <a href="{{path('join')}}" class="btn btn-outline-primary mt-3 ml-sm-3"
+                            >Become an Instructor</a
+                            >
+                        </li>
+                    {% elseif is_granted('ROLE_INST') %}
+                        <li class="nav-item nav-item__has-megamenu megamenu-col-2 ">
+                            <a href="#" class="btn btn-outline-primary mt-3 ml-sm-3"
+                            >Instructor</a
+                            >
+                        </li>
+                    {% else %}
+                        <li class="nav-item nav-item__has-megamenu megamenu-col-2 ">
+                            <a href="{{path('join')}}" class="btn btn-outline-primary mt-3 ml-sm-3"
+                            >Become an Instructor</a
+                            >
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

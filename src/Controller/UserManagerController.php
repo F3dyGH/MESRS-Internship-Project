@@ -90,8 +90,7 @@ class UserManagerController extends AbstractController
             if ($form1->isSubmitted() && $form1->isValid()) {
 
                 $entityManager = $this->getDoctrine()->getManager();
-                // move_uploaded_file($_FILES['image',''])
-                //$entityManager->flush();
+
                 // Encode the plain password, and set it.
                 $encodedPassword = $passwordEncoder->encodePassword(
                     $user,
@@ -114,8 +113,7 @@ class UserManagerController extends AbstractController
             if ($form->isSubmitted() && $form->isValid()) {
 
                 $entityManager = $this->getDoctrine()->getManager();
-                // move_uploaded_file($_FILES['image',''])
-                //$entityManager->flush();
+
                 // Encode the plain password, and set it.
                 $encodedPassword = $passwordEncoder->encodePassword(
                     $user,
@@ -133,11 +131,5 @@ class UserManagerController extends AbstractController
 
         }
     }
-//    /**
-//     *@Route ("/profile" , name="instprofile")
-//     */
-//    public function profile(){
-//        return $this->render("FrontOffice/profile/InstProfile.html.twig");
-//    }
 
 }

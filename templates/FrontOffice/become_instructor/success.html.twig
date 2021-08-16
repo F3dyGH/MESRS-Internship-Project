@@ -1,0 +1,30 @@
+{% extends 'FrontOffice/body.html.twig' %}
+
+{% block title %}Your Request has been sent successfully{% endblock %}
+{% block breadcrumb %}
+    <span></span>
+{% endblock %}
+{% block pagetitle %}<span></span>{% endblock %}
+{% block content %}
+    <section class="padding-y-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2>
+                        <i class="fas fa-check-circle text-success mr-1"></i> Success
+                    </h2>
+                    <h4 class="my-4"> Request submitted successfully</h4>
+                    <p>
+                        Your Request has been sent successfully and it will be reviewed by the admins, in case u got accepted, you'll receive an email.
+                    </p>
+                    <p>
+                        If you don't receive an email please check your spam folder.
+                    </p>
+                                        <a href="{{ path('educati') }}" class="btn btn-primary mt-4">Back to home</a>
+                </div>
+            </div>
+            <!-- END row-->
+        </div>
+        <!-- END container-->
+    </section>
+{% endblock %}

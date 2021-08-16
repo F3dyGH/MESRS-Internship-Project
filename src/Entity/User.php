@@ -85,6 +85,11 @@ class User implements UserInterface, \Serializable
      */
     private $about;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=InstForm::class, inversedBy="inst")
+     */
+    private $instForm;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -170,8 +175,7 @@ class User implements UserInterface, \Serializable
     /**
      * @see UserInterface
      */
-    public
-    function getRoles(): array
+    public function getRoles(): array
     {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
@@ -312,5 +316,17 @@ class User implements UserInterface, \Serializable
             $this->username,
             $this->password,
             ) = unserialize($serialized);
+    }
+
+    public function getInstForm(): ?InstForm
+    {
+        return $this->instForm;
+    }
+
+    public function setInstForm(?InstForm $instForm): self
+    {
+        $this->instForm = $instForm;
+
+        return $this;
     }
 }
