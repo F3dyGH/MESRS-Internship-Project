@@ -123,8 +123,8 @@
             </li>
 
             <li>
-                <a href="#">
-                    <i class="zmdi zmdi-accounts-alt"></i> <span>Teachers</span>
+                <a href="{{ path('inst_request') }}">
+                    <i class="zmdi zmdi-file-text"></i> <span>Instructors Requests</span>
                 </a>
             </li>
 
@@ -279,6 +279,7 @@
 </div><!--End wrapper-->
 
 <!-- Bootstrap core JavaScript-->
+{% block js %}
 <script src="{{ asset('BackOffice/assets/js/jquery.min.js') }}"></script>
 <script src="{{ asset('BackOffice/assets/js/popper.min.js') }}"></script>
 <script src="{{ asset('BackOffice/assets/js/bootstrap.min.js') }}"></script>
@@ -297,7 +298,7 @@
 
 <!-- Index js -->
 <script src="{{ asset('BackOffice/assets/js/index.js') }}"></script>
-
+{% endblock %}
 
 </body>
 </html>

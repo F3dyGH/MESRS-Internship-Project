@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\InstForm;
 use App\Entity\User;
 use App\Form\UserRoleType;
 use App\Form\UserType;
@@ -71,6 +72,46 @@ class UserManagerController extends AbstractController
             "form_title" => "Modifier vos informations",
             "userForm" => $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/admin/requests", name="inst_request")
+     */
+     public function requestList(): Response
+     {
+         $users = $this->getDoctrine()->getRepository(User::class)->findAll();
+         $req = $this->getDoctrine()->getRepository(InstForm::class)->findAll();
+         return $this->render('BackOffice/Inst_requests/list.html.twig', [
+             'controller_name' => 'UserManagerController',
+             'requests' => $req,
+             'users' => $users
+         ]);
+     }
+    /**
+     * @Route("admin/requests/approve/{id}", name="approved")
+     */
+    public function delete(int $id): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+//        $form = $entityManager->getRepository(InstForm::class)->find($id);
+//        $user = $entityManager->getRepository(User::class)->findOneBy(['id'=>$id]);
+        $user = $entityManager->getRepository(User::class)->find($id);
+        $user->setRoles(['ROLE_INST']);
+//        $this->deletereq($id);
+//        $entityManager->remove($form);
+        $entityManager->flush();
+        return $this->redirectToRoute('inst_request');
+    }
+    /**
+     * @Route("admin/requests/delete/{id}", name="delete_req")
+     */
+    public function deletereq(int $id): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $form = $entityManager->getRepository(InstForm::class)->find($id);
+        $entityManager->remove($form);
+        $entityManager->flush();
+        return $this->redirectToRoute('inst_request');
     }
 
     /**

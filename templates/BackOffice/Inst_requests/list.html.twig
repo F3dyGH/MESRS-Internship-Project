@@ -1,0 +1,126 @@
+{% extends 'BackOffice/base.html.twig' %}
+{% block title %}Admin - Requests List {% endblock %}
+{% block container %}
+    <div class="container-fluid">
+
+        <!--Start Dashboard Content-->
+
+        <div class="card mt-3">
+            <div class="card-content">
+                <div class="row row-group m-0">
+                    <div class="row">
+                        <div class="col-12 col-lg-12">
+                            <div class="card row row-group m-0">
+                                <div class="card-header"><span>Requests List</span>
+
+
+                                    <table class="table align-items-center table-flush table-borderless table-responsive-md">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            {# <th scope="col">Image</th> #}
+                                            <th scope="col">Speciality</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">CV</th>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        {% for r in requests %}
+                                            {# {% if users.role == "[0]" %} #}
+                                            <tr>
+                                                <td scope="row">{{ r.id }}</td>
+                                                <td scope="row">{{ r.speciality }}</td>
+                                                <td scope="row">{{ r.inst.name }} {{ r.inst.lastname }}</td>
+                                                <td scope="row">{{ r.inst.email }}</td>
+                                                <td scope="row"><a href="javascript:void(0);" onClick="popUpWindow('{{ asset('CV/instructor/' ~ r.cv) }}');" title="Download CV" target="_blank"><i class="zmdi zmdi-download"></i></a></td>
+                                                <td scope="row">{{ r.date|date("d/m/Y h:i:s") }}</td>
+                                                {#<td scope="row">
+                                                    {% for role in u.roles %}
+                                                        {% if role == "ROLE_ADMIN" %}
+                                                            Admin
+                                                        {% elseif role == "ROLE_USER" %}
+                                                            User
+                                                        {% elseif role == "ROLE_STUD" %}
+                                                            Student
+                                                        {% elseif role =="ROLE_INST" %}
+                                                            Instructor
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </td>#}
+
+                                                <td scope="row">
+                                                    <a href="{{ path('approved',{'id':r.inst.id}) }}">
+                                                        <i class="ti-thumb-up"></i>
+                                                    </a>
+                                                    <span>
+                                                    <a href="{{ path('delete_req',{'id':r.id}) }}">
+                                                        <i class="ti-close"></i>
+                                                    </a>
+                                                    {# <a href="{{ path('delete_product',{'id':i.id} ) }} "
+                                                       data-toggle="tooltip" data-placement="bottom"
+                                                       data-original-title="Supprimer">
+                                                        <i class="ti-close"></i>
+                                                    </a> #}
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+
+
+                                </div>
+                            </div><!--End Row-->
+
+                            <!--End Dashboard Content-->
+
+                            <!--start overlay-->
+                            <div class="overlay toggle-menu"></div>
+                            <!--end overlay-->
+
+                        </div>
+                        <!-- End container-fluid-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End content-wrapper-->
+    <!--Start Back To Top Button-->
+    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+    <!--End Back To Top Button-->
+    {% block js %}
+        <script language="javascript" type="text/javascript">
+            let popUpWin = 0;
+
+            function popUpWindow(URLStr, left, top, width, height)
+            {
+                if(popUpWin)
+                {
+                    if(!popUpWin.closed) popUpWin.close();
+                }
+                popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=yes,width='+600+',height='+600+',left='+left+', top='+top+',screenX='+left+',screenY='+top+'');
+            }
+
+        </script>
+        {% endblock %}
+{% endblock %}

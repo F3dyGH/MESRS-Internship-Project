@@ -46,6 +46,8 @@ class InstFormController extends AbstractController
                 return $this->redirectToRoute('succesrequest');
             }
 
+           /* return $this->render('FrontOffice/InstructorPortal/index.html.twig'
+            );*/
             return $this->render('FrontOffice/become_instructor/join.html.twig', [
                 'controller_name' => 'InstFormController',
                 "form_title" => "Request Instructor",

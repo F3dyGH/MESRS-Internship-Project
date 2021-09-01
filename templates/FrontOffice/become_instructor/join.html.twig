@@ -242,7 +242,18 @@
                 <div class="col-md-4 mt-5 wow zoomIn" data-wow-delay=".2s">
 
                     <p class="ec-counter display-4 text-primary" data-to="8404547">
-                        {{users|length }}
+{#                        {% set string = "ROLE_STUD" %}#}
+{#                        {% set data = string in users %}#}
+{#                            {% if users|filterType(["ROLE_STUD,ROLE_USER"]) %}#}
+                            {{users|length}}
+{#                            {% endif %}#}
+
+{#{{ users|filterType(["ROLE_STUD"],users)|length }}#}
+
+{#                        {% if users.roles |json_encode()    == string  %}#}
+
+{#                        {% endif %}#}
+
                     </p>
 
                     <p class="lead">Online Students</p>

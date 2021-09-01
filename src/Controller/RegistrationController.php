@@ -63,6 +63,7 @@ class RegistrationController extends AbstractController
                 $authenticator,
                 'main' // firewall name in security.yaml
             );
+
         }
 
         return $this->render('FrontOffice/registration/register.html.twig', [

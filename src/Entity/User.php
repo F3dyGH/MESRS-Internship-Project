@@ -3,12 +3,15 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
@@ -27,6 +30,7 @@ class User implements UserInterface, \Serializable
 
     /**
      * @ORM\Column(type="string", length=180)
+     * @Assert\Email(message = "Email '{{value}}' is invalid")
      */
     private $email;
 
@@ -89,6 +93,22 @@ class User implements UserInterface, \Serializable
      * @ORM\ManyToOne(targetEntity=InstForm::class, inversedBy="inst")
      */
     private $instForm;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Instructor::class, mappedBy="inst")
+     */
+    private $instructors;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Student::class, mappedBy="student")
+     */
+    private $students;
+
+    public function __construct()
+    {
+        $this->instructors = new ArrayCollection();
+        $this->students = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -326,6 +346,66 @@ class User implements UserInterface, \Serializable
     public function setInstForm(?InstForm $instForm): self
     {
         $this->instForm = $instForm;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Instructor[]
+     */
+    public function getInstructors(): Collection
+    {
+        return $this->instructors;
+    }
+
+    public function addInstructor(Instructor $instructor): self
+    {
+        if (!$this->instructors->contains($instructor)) {
+            $this->instructors[] = $instructor;
+            $instructor->setInst($this);
+        }
+
+        return $this;
+    }
+
+    public function removeInstructor(Instructor $instructor): self
+    {
+        if ($this->instructors->removeElement($instructor)) {
+            // set the owning side to null (unless already changed)
+            if ($instructor->getInst() === $this) {
+                $instructor->setInst(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Student[]
+     */
+    public function getStudents(): Collection
+    {
+        return $this->students;
+    }
+
+    public function addStudent(Student $student): self
+    {
+        if (!$this->students->contains($student)) {
+            $this->students[] = $student;
+            $student->setStudent($this);
+        }
+
+        return $this;
+    }
+
+    public function removeStudent(Student $student): self
+    {
+        if ($this->students->removeElement($student)) {
+            // set the owning side to null (unless already changed)
+            if ($student->getStudent() === $this) {
+                $student->setStudent(null);
+            }
+        }
 
         return $this;
     }

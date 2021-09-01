@@ -65,7 +65,7 @@ class InstForm
         return $this->id;
     }
 
-    public function getInst(): ?Category
+    public function getInst(): ?User
     {
         return $this->inst;
     }

@@ -1061,8 +1061,8 @@
                         </li>
                     {% elseif is_granted('ROLE_INST') %}
                         <li class="nav-item nav-item__has-megamenu megamenu-col-2 ">
-                            <a href="#" class="btn btn-outline-primary mt-3 ml-sm-3"
-                            >Instructor</a
+                            <a href="{{ path('inst_dashboard') }}" class="btn btn-outline-primary mt-3 ml-sm-3"
+                            >Instructor Dashboard</a
                             >
                         </li>
                     {% else %}
