@@ -31,6 +31,7 @@ class InstFormController extends AbstractController
     {
         $this->denyAccessUnlessGranted('ROLE_STUD');
         $users = $this->getDoctrine()->getRepository(User::class)->findAll();
+        $instformm = $this->getDoctrine()->getRepository(InstForm::class)->findAll();
         $courses = $this->getDoctrine()->getRepository(Product::class)->findAll();
         $u = $this->security->getUser();
         $instForm = new InstForm();
@@ -52,6 +53,7 @@ class InstFormController extends AbstractController
                 'controller_name' => 'InstFormController',
                 "form_title" => "Request Instructor",
                 "instform" => $form->createView(),
+                "insform" => $instformm,
                 "users"=>$users,
                 "products"=>$courses
             ]);

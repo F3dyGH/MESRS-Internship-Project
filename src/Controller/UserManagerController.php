@@ -79,13 +79,13 @@ class UserManagerController extends AbstractController
      */
      public function requestList(): Response
      {
-         $users = $this->getDoctrine()->getRepository(User::class)->findAll();
          $req = $this->getDoctrine()->getRepository(InstForm::class)->findAll();
-         return $this->render('BackOffice/Inst_requests/list.html.twig', [
-             'controller_name' => 'UserManagerController',
-             'requests' => $req,
-             'users' => $users
-         ]);
+         $users = $this->getDoctrine()->getRepository(User::class)->findAll();
+            return $this->render('BackOffice/Inst_requests/list.html.twig', [
+                'controller_name' => 'UserManagerController',
+                'requests' => $req,
+                'users' => $users
+            ]);
      }
     /**
      * @Route("admin/requests/approve/{id}", name="approved")

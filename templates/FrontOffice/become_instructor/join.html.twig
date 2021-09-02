@@ -416,12 +416,17 @@
                                 </div>
 
                             </div>
-
+                       {# {% for i in insform %}
+                            {% if app.user.id in i.inst %}#}
                             <div class="my-0">
                                 <button class="btn btn-success m-2" type="submit">Send Request</button>
                             </div>
                             <br>
                             <span class="my-3">Your Request will be reviewed by our admins, if you got accepted you'll receive an email</span>
+                       {# {% else %}
+                        <span>Your Request has been submitted</span>
+                        {% endif %}
+                        {% endf %}#}
                         {{ form_end(instform) }}
                     </div>
                 </div>

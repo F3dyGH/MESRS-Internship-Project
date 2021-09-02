@@ -19,22 +19,32 @@ class InstFormRepository extends ServiceEntityRepository
         parent::__construct($registry, InstForm::class);
     }
 
-    // /**
-    //  * @return InstForm[] Returns an array of InstForm objects
-    //  */
-    /*
-    public function findByExampleField($value)
+     /**
+      * @return InstForm[] Returns an array of InstForm objects
+      */
+
+    public function findByUserRole($inst)
     {
-        return $this->createQueryBuilder('i')
+
+        /*return $this->createQueryBuilder('i')
             ->andWhere('i.exampleField = :val')
-            ->setParameter('val', $value)
+            ->setParameter('val', $role)
             ->orderBy('i.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
-        ;
+            ;*/
+        return $this->createQueryBuilder('i')
+            ->join('i.inst', 'u')
+            ->addSelect('u')
+            ->where('u.id = :inst')
+            ->andWhere('u.roles IN (:role)')
+            ->setParameter('id', $inst)
+            ->setParameter('roles', array('ROLE_STUD'))
+            ->getQuery()->getResult()
+            ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?InstForm
