@@ -74,6 +74,7 @@ class UserManagerController extends AbstractController
         ]);
     }
 
+
     /**
      * @Route("/admin/requests", name="inst_request")
      */

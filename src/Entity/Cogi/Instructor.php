@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Entity;
+namespace App\Entity\Cogi;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Student
+ * Instructor
  *
- * @ORM\Table(name="student", indexes={@ORM\Index(name="IDX_B723AF33CB944F1A", columns={"student_id"})})
+ * @ORM\Table(name="instructor", indexes={@ORM\Index(name="IDX_31FC43DD72930994", columns={"inst_id"})})
  * @ORM\Entity
  */
-class Student
+class Instructor
 {
     /**
      * @var int
@@ -26,24 +26,24 @@ class Student
      *
      * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="student_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="inst_id", referencedColumnName="id")
      * })
      */
-    private $student;
+    private $inst;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getStudent(): ?User
+    public function getInst(): ?User
     {
-        return $this->student;
+        return $this->inst;
     }
 
-    public function setStudent(?User $student): self
+    public function setInst(?User $inst): self
     {
-        $this->student = $student;
+        $this->inst = $inst;
 
         return $this;
     }
