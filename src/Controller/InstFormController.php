@@ -37,11 +37,26 @@ class InstFormController extends AbstractController
         $instForm = new InstForm();
         $form = $this->createForm(InstformType::class,$instForm);
         $form->handleRequest($request);
-
-            if ($form->isSubmitted() && $form->isValid()) {
+        $exist = $this->getDoctrine()->getRepository(Instform::class)->findOneBy(['inst' => $u]);
+        if($exist){
+            $form->isDisabled();
+            //$this->addFlash('alert',"you already applied, wait for our admins approval");
+            return $this->render("FrontOffice/become_instructor/already_applied.html.twig", [
+                'controller_name' => 'InstFormController',
+                "form_title" => "Request Instructor",
+                "instform" => $form->createView(),
+                "insform" => $instformm,
+                "users"=>$users,
+                "products"=>$courses
+            ]);
+        }
+           else if ($form->isSubmitted() && $form->isValid()) {
                 $em = $this->getDoctrine()->getManager();
+                // refresh CSRF token (form_intention)
+                //$this->get("security.csrf.token_manager")->refreshToken("form_intention");
                 $instForm->setInst($u);
                 $instForm->setDate(new \DateTime('@' . strtotime('now')));
+                $instForm->setUpdatedAt(new \DateTime('@' . strtotime('now')));
                 $em->persist($instForm);
                 $em->flush();
                 return $this->redirectToRoute('succesrequest');

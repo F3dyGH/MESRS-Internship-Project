@@ -3,12 +3,15 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * InstForm
  *
  * @ORM\Table(name="inst_form", indexes={@ORM\Index(name="IDX_57146EF072930994", columns={"inst_id"})})
  * @ORM\Entity
+ * @Vich\Uploadable
  */
 class InstForm
 {
@@ -34,6 +37,11 @@ class InstForm
      * @ORM\Column(name="cv", type="string", length=255, nullable=false)
      */
     private $cv;
+    /**
+     * @Vich\UploadableField(mapping="instform", fileNameProperty="cv")
+     * @var File
+     */
+    private $cvFile;
 
     /**
      * @var \DateTime
@@ -45,7 +53,7 @@ class InstForm
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="updated_at", type="datetime", nullable=false)
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      */
     private $updatedAt;
 
@@ -86,6 +94,19 @@ class InstForm
         $this->cv = $cv;
 
         return $this;
+    }
+
+    public function getCvFile(): ?File
+    {
+        return $this->cvFile;
+    }
+
+    /**
+     * @param File $cvFile
+     */
+    public function setCvFile(File $cvFile = null): void
+    {
+        $this->cvFile = $cvFile;
     }
 
     public function getDate(): ?\DateTimeInterface

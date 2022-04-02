@@ -21,12 +21,17 @@ class InstformType extends AbstractType
         'download_uri' => false,
     ])
             ->add('date',HiddenType::class)
+            ->add('updatedAt',HiddenType::class)
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
+            'csrf_protection' => true,
+            'csrf_field_name' => '_token',
+            // important part; unique key
+            'intention'       => 'form_intention',
             'data_class' => InstForm::class,
         ]);
     }

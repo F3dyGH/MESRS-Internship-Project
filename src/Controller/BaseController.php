@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\InstForm;
 use App\Entity\User;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -44,6 +45,7 @@ class BaseController extends AbstractController
     public function indexFront(): Response
     {
         $u = $this->security->isGranted('ROLE_USER');
+        $instformm = $this->getDoctrine()->getRepository(InstForm::class)->findAll();
         $us = $this->security->getUser();
         $entityManager = $this->getDoctrine()->getManager();
         $user = $entityManager->getRepository(User::class)->find($u);
@@ -62,11 +64,13 @@ class BaseController extends AbstractController
             }
             return $this->render('FrontOffice/home/home.html.twig', [
                 'controller_name' => 'BaseController',
+                'instform' => $instformm
             ]);
         }
         else{
             return $this->render('FrontOffice/home/home.html.twig', [
                 'controller_name' => 'BaseController',
+                'instform' => $instformm
             ]);
         }
     }

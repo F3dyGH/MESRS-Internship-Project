@@ -45,7 +45,14 @@ class InstFormRepository extends ServiceEntityRepository
             ;
     }
 
+    public function findByInstId($instId)
+    {
+        $qb = $this->createQueryBuilder('ii');
+        $qb->where('IDENTITY(ii.inst) = :instId')
+            ->setParameter('instId', $instId);
 
+        return $qb->getQuery()->getResult();
+    }
     /*
     public function findOneBySomeField($value): ?InstForm
     {

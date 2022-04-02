@@ -83,7 +83,7 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator
         throw new \Exception('TODO: check the credentials inside ' . __FILE__);
     }
 
-    public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
+    public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey): RedirectResponse
     {
         $roles = $token->getRoles();
         $rolesTab = array_map(function ($role) {
@@ -101,7 +101,7 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator
         return $redirection;
     }
 
-    protected function getLoginUrl()
+    protected function getLoginUrl(): string
     {
         return $this->urlGenerator->generate(self::LOGIN_ROUTE);
     }

@@ -411,7 +411,7 @@
                                     <span class="input-group-text bg-white ti-user"></span>
                                 </div>
 
-                                {{ form_widget(instform.speciality,{attr: {class: 'form-control', 'type': 'text','placeholder':'Web Developer, Software Engineer ...' }}) }}
+                                {{ form_widget(instform.speciality,{attr: {'disabled':'disabled', class: 'form-control', 'type': 'text','placeholder':'Web Developer, Software Engineer ...' }}) }}
 
                             </div>
                             <br>
@@ -420,14 +420,14 @@
                                 <div class="media-body ml-4 mb-5 mb-md-5">
                                     <p>Upload your Curriculum Vitae (PDF File)</p>
                                     <a href=""></a>
-                                    {{ form_widget(instform.cvFile) }}
+                                    {{ form_widget(instform.cvFile, {attr:{'disabled':'disabled'}}) }}
                                 </div>
 
                             </div>
                         {#{% for i in insform %}
                             {% if app.user.id == i.inst.id %}#}
                             <div class="my-0">
-                                <button class="btn btn-success m-2" type="submit" >Send Request</button>
+                                <button class="btn btn-success m-2" type="submit" hidden>Send Request</button>
                             </div>
                                {# {% else %}
                                     <div class="my-0">
@@ -437,7 +437,7 @@
                         {% endfor %}#}
 
                             <br>
-                            <span class="my-3">Your Request will be reviewed by our admins, if you got accepted you'll receive an email</span>
+                            <span class="my-3" style="color: red;">Your already applied, wait until you will be reviewed by our admins, if you got accepted you'll receive an email</span>
                        {# {% else %}
                         <span>Your Request has been submitted</span>
                         {% endif %}
