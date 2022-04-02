@@ -39,7 +39,6 @@ class InstFormController extends AbstractController
         $form->handleRequest($request);
         $exist = $this->getDoctrine()->getRepository(Instform::class)->findOneBy(['inst' => $u]);
         if($exist){
-            $form->isDisabled();
             //$this->addFlash('alert',"you already applied, wait for our admins approval");
             return $this->render("FrontOffice/become_instructor/already_applied.html.twig", [
                 'controller_name' => 'InstFormController',
